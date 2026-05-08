@@ -4,7 +4,7 @@ These are focused on providing functionality for speedrun practice and glitch hu
 
 
 ## Games:
-[LEGO Indiana Jones: The Original Adventures](./LIJ1/LEGOIndyMotorcycleFix.ct)  
+[LEGO Indiana Jones: The Original Adventures](./LIJ1/LEGOIndyMotorcycleFix.CT)  
 [LEGO Star Wars: The Complete Saga](./TCS/LEGOStarWarsSagaNOCUT.ct)  
 
 
@@ -46,5 +46,5 @@ Debug Symbol EXEs from the TT Games LEGO Modding Discord (Download links):
 
 
 ## Tools used:
-[Cheat Engine](https://www.cheatengine.org/)  
-[Ghidra](https://github.com/nationalsecurityagency/ghidra)  
+[Cheat Engine](https://www.cheatengine.org/) (For live memory and function scanning, debugging, and analysis)  
+[Ghidra](https://github.com/nationalsecurityagency/ghidra) (For static analysis of executables)  
