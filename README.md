@@ -4,7 +4,7 @@ These are focused on providing functionality for speedrun practice and glitch hu
 
 
 ## Games:
-[LEGO Indiana Jones: The Original Adventures](./LIJ1/LEGOIndyItemsNOCUT.ct)  
+[LEGO Indiana Jones: The Original Adventures](./LIJ1/LEGOIndyMotorcycleFix.ct)  
 [LEGO Star Wars: The Complete Saga](./TCS/LEGOStarWarsSagaNOCUT.ct)  
 
 
@@ -15,5 +15,14 @@ These are focused on providing functionality for speedrun practice and glitch hu
 
 
 
-Shoutout Wiisuper for making this video on how to add NOCUT to LIJ1:
+
+
+Resources used:
+
+Cheat Engine Tutorial - Finding & Calling Game Function | Plants vs Zombies
+by LMNOP
+https://www.youtube.com/watch?v=jMeWervEqJI
+
+How to Skip Cutscenes in LIJ1 (PC)
+by WiiSuper
 https://www.youtube.com/watch?v=ejuA7HDLdzw

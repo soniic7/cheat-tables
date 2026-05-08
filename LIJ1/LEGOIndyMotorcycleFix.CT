@@ -1,0 +1,4346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="46">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>239</ID>
+      <Description>"Gizmo Loop"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>LEGOIndy.exe+6D27B4</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>251</ID>
+      <Description>"Cutscenes"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>181</ID>
+          <Description>"Enable NOCUT"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>250</ID>
+          <Description>"Skip cutscene (bind hotkey)"</Description>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Activate</Action>
+              <Keys>
+                <Key>79</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>240</ID>
+          <Description>"In cutscene flag"</Description>
+          <VariableType>Byte</VariableType>
+          <Address>LEGOIndy.exe+5BBC5F</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>245</ID>
+      <Description>"Levels"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>249</ID>
+          <Description>"Crusade"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>246</ID>
+              <Description>"3-3 Motorcycle Escape"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>248</ID>
+                  <Description>" !!! UNCHECK BEFORE SWITCHING LEVELS !!!"</Description>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>247</ID>
+                  <Description>"Fix endroom motorcycles"</Description>
+                  <Options moRecursiveSetValue="1" moAlwaysHideChildren="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+                  <LastState Value="" RealAddress="00000000"/>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>243</ID>
+                      <Description>"msg_Init_A"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>000000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                      <Offsets>
+                        <Offset>1D46A8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>244</ID>
+                      <Description>"msg_Init_B"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <Color>000000</Color>
+                      <VariableType>Float</VariableType>
+                      <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                      <Offsets>
+                        <Offset>1D46E0</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>51</ID>
+      <Description>"Players"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>129</ID>
+          <Description>"Player 1"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>FF0000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>146</ID>
+              <Description>"Enable respawn speedup"</Description>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>75</ID>
+              <Description>"P1 Health"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>000000</Color>
+              <VariableType>Byte</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>1523</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>151</ID>
+              <Description>"P1 Max Hearts"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>000000</Color>
+              <VariableType>Byte</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>1522</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>228</ID>
+              <Description>"Give P1 item"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+alloc(ItemTable, 104)
+registersymbol(ItemTable)
+
+ItemTable:
+dd 3401D0   // bazooka
+dd 340A50   // crossbow
+dd 33F840   // pistol
+dd 33F950   // walkietalkie
+dd 33FA60   // crank
+dd 33FB70   // book
+dd 33FC80   // wrench
+dd 33FD90   // grenade
+dd 33FEA0   // dynamite
+dd 33FFB0   // banana
+dd 3400C0   // shovel
+dd 3402E0   // torch
+dd 3403F0   // grail sword
+dd 340500   // sword
+dd 340610   // spear
+dd 340720   // bottle
+dd 340830   // rifle
+dd 340940   // machinegun
+dd 340B60   // blacksleep
+dd 340C70   // barrel
+dd 340D80   // bush
+dd 340E90   // red brick
+dd 340FA0   // chair
+dd 3410B0   // raven stool
+dd 3411C0   // rock
+dd 3412D0   // holy grail
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+
+// add offset to item here
+
+
+
+
+// Item functions
+
+mov eax,[SelectedItemP1]      // index (0–25)
+mov edx,ItemTable
+add esi,[edx+eax*4]
+
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+// // Adding the offset for player 2 here
+// add edi, 15B0
+
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+
+
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>226</ID>
+              <Description>"P1 Selected Item"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Bazooka
+1:Crossbow
+2:Pistol
+3:Walkie_talkie
+4:Crank
+5:Book
+6:Wrench
+7:Grenade
+8:Dynamite
+9:Banana
+10:Shovel
+11:Torch
+12:Grail sword
+13:Sword
+14:Spear
+15:Bottle
+16:Rifle
+17:Machine gun
+18:Black sleep
+19:Barrel
+20:Bush
+21:Red brick
+22:Chair
+23:Raven stool
+24:Rock
+25:Holy grail
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>SelectedItemP1</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>128</ID>
+              <Description>"P1 Position"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <Color>000000</Color>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>11</ID>
+                  <Description>"P1 X Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>5C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>12</ID>
+                  <Description>"P1 Y Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>60</Offset>
+                  </Offsets>
+                  <Hotkeys>
+                    <Hotkey>
+                      <Action>Decrease Value</Action>
+                      <Keys>
+                        <Key>70</Key>
+                      </Keys>
+                      <Value>.5</Value>
+                      <Description>Go under floor</Description>
+                      <ID>0</ID>
+                    </Hotkey>
+                  </Hotkeys>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>13</ID>
+                  <Description>"P1 Z Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>64</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>127</ID>
+              <Description>"P1 Velocity"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>98</ID>
+                  <Description>"P1 X Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>68</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>99</ID>
+                  <Description>"P1 Y Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>6C</Offset>
+                  </Offsets>
+                  <Hotkeys>
+                    <Hotkey>
+                      <Action>Set Value</Action>
+                      <Keys>
+                        <Key>66</Key>
+                      </Keys>
+                      <Value>2.5</Value>
+                      <Description>Lift player</Description>
+                      <ID>0</ID>
+                    </Hotkey>
+                  </Hotkeys>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>100</ID>
+                  <Description>"P1 Z Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>70</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>126</ID>
+              <Description>"P1 Hard Spawn"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <DropDownList>t:desc
+</DropDownList>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>113</ID>
+                  <Description>"P1 X Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1CC</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>114</ID>
+                  <Description>"P1 Y Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1D0</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>115</ID>
+                  <Description>"P1 Z Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1D4</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>184</ID>
+                  <Description>"P1 Superjump timer"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>FF0000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1D8</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>145</ID>
+              <Description>"P1 weapon instances ammo"</Description>
+              <Options moManualExpandCollapse="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>58</ID>
+                  <Description>"P1 weapon instance 1 ammo"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>40FF00</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>A2C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>53</ID>
+                  <Description>"P1 weapon instance 2 ammo"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>40FF00</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>A54</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>62</ID>
+                  <Description>"P1 weapon instance 3 ammo"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>40FF00</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>A7C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>64</ID>
+                  <Description>"P1 weapon instance 4 ammo"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>40FF00</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>AA4</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>59</ID>
+                  <Description>"P1 weapon instance 5 ammo"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>40FF00</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>ACC</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>55</ID>
+                  <Description>"P1 weapon instance 6 ammo"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>40FF00</Color>
+                  <VariableType>Byte</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>AF4</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>133</ID>
+          <Description>"Player 2"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>408000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>77</ID>
+              <Description>"P2 Health"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>000000</Color>
+              <VariableType>Byte</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>4083</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>230</ID>
+              <Description>"Give P2 item"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+alloc(ItemTable, 104)
+registersymbol(ItemTable)
+
+ItemTable:
+dd 3401D0   // bazooka
+dd 340A50   // crossbow
+dd 33F840   // pistol
+dd 33F950   // walkietalkie
+dd 33FA60   // crank
+dd 33FB70   // book
+dd 33FC80   // wrench
+dd 33FD90   // grenade
+dd 33FEA0   // dynamite
+dd 33FFB0   // banana
+dd 3400C0   // shovel
+dd 3402E0   // torch
+dd 3403F0   // grail sword
+dd 340500   // sword
+dd 340610   // spear
+dd 340720   // bottle
+dd 340830   // rifle
+dd 340940   // machinegun
+dd 340B60   // blacksleep
+dd 340C70   // barrel
+dd 340D80   // bush
+dd 340E90   // red brick
+dd 340FA0   // chair
+dd 3410B0   // raven stool
+dd 3411C0   // rock
+dd 3412D0   // holy grail
+
+
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+
+// add offset to item here
+
+// Item functions
+
+mov eax,[SelectedItemP2]      // index (0–25)
+mov edx,ItemTable
+add esi,[edx+eax*4]
+
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+// Adding the offset for player 2 here
+add edi, 15B0
+//add edi, 2B60
+
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Activate</Action>
+                  <Keys>
+                    <Key>79</Key>
+                  </Keys>
+                  <ID>0</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>229</ID>
+              <Description>"P2 Selected Item"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Bazooka
+1:Crossbow
+2:Pistol
+3:Walkie_talkie
+4:Crank
+5:Book
+6:Wrench
+7:Grenade
+8:Dynamite
+9:Banana
+10:Shovel
+11:Torch
+12:Grail sword
+13:Sword
+14:Spear
+15:Bottle
+16:Rifle
+17:Machine gun
+18:Black sleep
+19:Barrel
+20:Bush
+21:Red brick
+22:Chair
+23:Raven stool
+24:Rock
+25:Holy grail
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>SelectedItemP2</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>130</ID>
+              <Description>"P2 Position"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>17</ID>
+                  <Description>"P2 X Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>160C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>18</ID>
+                  <Description>"P2 Y Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1610</Offset>
+                  </Offsets>
+                  <Hotkeys>
+                    <Hotkey>
+                      <Action>Decrease Value</Action>
+                      <Keys>
+                        <Key>17</Key>
+                        <Key>70</Key>
+                      </Keys>
+                      <Value>.5</Value>
+                      <Description>P2 under floor</Description>
+                      <ID>0</ID>
+                    </Hotkey>
+                  </Hotkeys>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>19</ID>
+                  <Description>"P2 Z Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1614</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>131</ID>
+              <Description>"P2 Velocity"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>101</ID>
+                  <Description>"P2 X Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1618</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>102</ID>
+                  <Description>"P2 Y Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>161C</Offset>
+                  </Offsets>
+                  <Hotkeys>
+                    <Hotkey>
+                      <Action>Set Value</Action>
+                      <Keys>
+                        <Key>78</Key>
+                      </Keys>
+                      <Value>2.5</Value>
+                      <Description>Lift player 2</Description>
+                      <ID>0</ID>
+                    </Hotkey>
+                  </Hotkeys>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>103</ID>
+                  <Description>"P2 Z Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1620</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>132</ID>
+              <Description>"P2 Hard Spawn"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>116</ID>
+                  <Description>"P2 X Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>177C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>117</ID>
+                  <Description>"P2 Y Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1780</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>118</ID>
+                  <Description>"P2 Z Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1784</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>185</ID>
+                  <Description>"P2 Superjump timer"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>008000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>1788</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>137</ID>
+          <Description>"Player 3"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>800080</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>138</ID>
+              <Description>"P3 Health"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>000000</Color>
+              <VariableType>Byte</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>6BE3</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>236</ID>
+              <Description>"Give P3 item"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+alloc(ItemTable, 104)
+registersymbol(ItemTable)
+
+ItemTable:
+dd 3401D0   // bazooka
+dd 340A50   // crossbow
+dd 33F840   // pistol
+dd 33F950   // walkietalkie
+dd 33FA60   // crank
+dd 33FB70   // book
+dd 33FC80   // wrench
+dd 33FD90   // grenade
+dd 33FEA0   // dynamite
+dd 33FFB0   // banana
+dd 3400C0   // shovel
+dd 3402E0   // torch
+dd 3403F0   // grail sword
+dd 340500   // sword
+dd 340610   // spear
+dd 340720   // bottle
+dd 340830   // rifle
+dd 340940   // machinegun
+dd 340B60   // blacksleep
+dd 340C70   // barrel
+dd 340D80   // bush
+dd 340E90   // red brick
+dd 340FA0   // chair
+dd 3410B0   // raven stool
+dd 3411C0   // rock
+dd 3412D0   // holy grail
+
+
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+
+// add offset to item here
+
+// Item functions
+
+mov eax,[SelectedItemP3]      // index (0–25)
+mov edx,ItemTable
+add esi,[edx+eax*4]
+
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+// Adding the offset for player 3 here
+add edi, 2B60
+
+
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>232</ID>
+              <Description>"P3 Selected Item"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Bazooka
+1:Crossbow
+2:Pistol
+3:Walkie_talkie
+4:Crank
+5:Book
+6:Wrench
+7:Grenade
+8:Dynamite
+9:Banana
+10:Shovel
+11:Torch
+12:Grail sword
+13:Sword
+14:Spear
+15:Bottle
+16:Rifle
+17:Machine gun
+18:Black sleep
+19:Barrel
+20:Bush
+21:Red brick
+22:Chair
+23:Raven stool
+24:Rock
+25:Holy grail
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>SelectedItemP3</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>134</ID>
+              <Description>"P3 Position"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>20</ID>
+                  <Description>"P3 X Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2BBC</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>21</ID>
+                  <Description>"P3 Y Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2BC0</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>22</ID>
+                  <Description>"P3 Z Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2BC4</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>135</ID>
+              <Description>"P3 Velocity"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>104</ID>
+                  <Description>"P3 X Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2BC8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>105</ID>
+                  <Description>"P3 Y Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2BCC</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>106</ID>
+                  <Description>"P3 Z Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2BD0</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>136</ID>
+              <Description>"P3 Hard Spawn"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>119</ID>
+                  <Description>"P3 X Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2D2C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>120</ID>
+                  <Description>"P3 Y Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2D30</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>121</ID>
+                  <Description>"P3 Z Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2D34</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>186</ID>
+                  <Description>"P3 Superjump timer"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>800080</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>2D38</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>143</ID>
+          <Description>"Player 4"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <Color>808000</Color>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>139</ID>
+              <Description>"P4 Health"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>000000</Color>
+              <VariableType>Byte</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>9743</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>237</ID>
+              <Description>"Give P4 item"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+alloc(ItemTable, 104)
+registersymbol(ItemTable)
+
+ItemTable:
+dd 3401D0   // bazooka
+dd 340A50   // crossbow
+dd 33F840   // pistol
+dd 33F950   // walkietalkie
+dd 33FA60   // crank
+dd 33FB70   // book
+dd 33FC80   // wrench
+dd 33FD90   // grenade
+dd 33FEA0   // dynamite
+dd 33FFB0   // banana
+dd 3400C0   // shovel
+dd 3402E0   // torch
+dd 3403F0   // grail sword
+dd 340500   // sword
+dd 340610   // spear
+dd 340720   // bottle
+dd 340830   // rifle
+dd 340940   // machinegun
+dd 340B60   // blacksleep
+dd 340C70   // barrel
+dd 340D80   // bush
+dd 340E90   // red brick
+dd 340FA0   // chair
+dd 3410B0   // raven stool
+dd 3411C0   // rock
+dd 3412D0   // holy grail
+
+
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+
+// add offset to item here
+
+// Item functions
+
+mov eax,[SelectedItemP4]      // index (0–25)
+mov edx,ItemTable
+add esi,[edx+eax*4]
+
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+// Adding the offset for player 4 here
+add edi, 4110
+
+
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>234</ID>
+              <Description>"P4 Selected Item"</Description>
+              <DropDownList ReadOnly="1" DescriptionOnly="1" DisplayValueAsItem="1">0:Bazooka
+1:Crossbow
+2:Pistol
+3:Walkie_talkie
+4:Crank
+5:Book
+6:Wrench
+7:Grenade
+8:Dynamite
+9:Banana
+10:Shovel
+11:Torch
+12:Grail sword
+13:Sword
+14:Spear
+15:Bottle
+16:Rifle
+17:Machine gun
+18:Black sleep
+19:Barrel
+20:Bush
+21:Red brick
+22:Chair
+23:Raven stool
+24:Rock
+25:Holy grail
+</DropDownList>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>SelectedItemP4</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>140</ID>
+              <Description>"P4 Position"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>23</ID>
+                  <Description>"P4 X Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>416C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>24</ID>
+                  <Description>"P4 Y Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>4170</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>25</ID>
+                  <Description>"P4 Z Position"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>4174</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>141</ID>
+              <Description>"P4 Velocity"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>107</ID>
+                  <Description>"P4 X Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>4178</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>108</ID>
+                  <Description>"P4 Y Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>417C</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>109</ID>
+                  <Description>"P4 Z Velocity"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>4180</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>142</ID>
+              <Description>"P4 Hard Spawn"</Description>
+              <Options moManualExpandCollapse="1" moActivateChildrenAsWell="1" moDeactivateChildrenAsWell="1"/>
+              <LastState Value="" RealAddress="00000000"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>122</ID>
+                  <Description>"P4 X Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>42DC</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>123</ID>
+                  <Description>"P4 Y Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>42E0</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>124</ID>
+                  <Description>"P4 Z Hard Spawn"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>42E4</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>187</ID>
+                  <Description>"P4 Superjump timer"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <Color>808000</Color>
+                  <VariableType>Float</VariableType>
+                  <Address>"LEGOIndy.exe"+006ADEE4</Address>
+                  <Offsets>
+                    <Offset>42E8</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>144</ID>
+          <Description>"Extras' Coordinates"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>26</ID>
+              <Description>"Extra 1 X Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>571C</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>27</ID>
+              <Description>"Extra 1 Y Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>5720</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>28</ID>
+              <Description>"Extra 1 Z Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>5724</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>29</ID>
+              <Description>"Extra 2 X Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>6CCC</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>30</ID>
+              <Description>"Extra 2 Y Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>6CD0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>31</ID>
+              <Description>"Extra 2 Z Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>6CD4</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>32</ID>
+              <Description>"Extra 3 X Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>827C</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>33</ID>
+              <Description>"Extra 3 Y Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>8280</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>34</ID>
+              <Description>"Extra 3 Z Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>8284</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>35</ID>
+              <Description>"Extra 4 X Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>982C</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>36</ID>
+              <Description>"Extra 4 Y Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>9830</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>37</ID>
+              <Description>"Extra 4 Z Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>9834</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>38</ID>
+              <Description>"Extra 5 X Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>ADDC</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>39</ID>
+              <Description>"Extra 5 Y Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>ADE0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>40</ID>
+              <Description>"Extra 5 Z Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>ADE4</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>41</ID>
+              <Description>"Extra 6 X Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>C38C</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>42</ID>
+              <Description>"Extra 6 Y Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>C390</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>43</ID>
+              <Description>"Extra 6 Z Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>C394</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>44</ID>
+              <Description>"Extra 7 X Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>D93C</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>45</ID>
+              <Description>"Extra 7 Y Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>D940</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>46</ID>
+              <Description>"Extra 7 Z Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>D944</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>47</ID>
+              <Description>"Extra 8 X Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>EEEC</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>48</ID>
+              <Description>"Extra 8 Y Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>EEF0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>49</ID>
+              <Description>"Extra 8 Z Pointer"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF00FF</Color>
+              <VariableType>Float</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>EEF4</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>182</ID>
+      <Description>"Internal Addresses (don't touch)"</Description>
+      <Options moAlwaysHideChildren="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>179</ID>
+          <Description>"NOCUT Address (Don't touch)"</Description>
+          <ShowAsHex>1</ShowAsHex>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>006A025C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>227</ID>
+          <Description>"AllocItemP1"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+alloc(SelectedItemP1,4)
+registersymbol(SelectedItemP1)
+
+SelectedItemP1:
+dd 0
+
+[DISABLE]
+
+unregistersymbol(SelectedItemP1)
+dealloc(SelectedItemP1)
+
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>231</ID>
+          <Description>"AllocItemP2"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+alloc(SelectedItemP2,4)
+registersymbol(SelectedItemP2)
+
+SelectedItemP2:
+dd 0
+
+[DISABLE]
+
+unregistersymbol(SelectedItemP2)
+dealloc(SelectedItemP2)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>233</ID>
+          <Description>"AllocItemP3"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+alloc(SelectedItemP3,4)
+registersymbol(SelectedItemP3)
+
+SelectedItemP3:
+dd 0
+
+[DISABLE]
+
+unregistersymbol(SelectedItemP3)
+dealloc(SelectedItemP3)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>235</ID>
+          <Description>"AllocItemP4"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+
+alloc(SelectedItemP4,4)
+registersymbol(SelectedItemP4)
+
+SelectedItemP4:
+dd 0
+
+[DISABLE]
+
+unregistersymbol(SelectedItemP4)
+dealloc(SelectedItemP4)
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>222</ID>
+          <Description>"Give P1 items (Old)"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Toggle Activation</Action>
+              <Keys>
+                <Key>188</Key>
+              </Keys>
+              <ID>0</ID>
+            </Hotkey>
+          </Hotkeys>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>193</ID>
+              <Description>"Give bazooka"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to bazooka pointer address
+add esi, 03401D0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>194</ID>
+              <Description>"Give crossbow"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to crossbow pointer address
+add esi, 340A50
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>196</ID>
+              <Description>"Give pistol"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to pistol pointer address
+add esi, 33F840
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>198</ID>
+              <Description>"Give walkie_talkie"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to crossbow walkie talkie address
+add esi, 33F950
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>199</ID>
+              <Description>"Give crank"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to crank address
+add esi, 33FA60
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>200</ID>
+              <Description>"Give book"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to book address
+add esi, 33FB70
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>201</ID>
+              <Description>"Give wrench"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to wrench address
+add esi, 33FC80
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>202</ID>
+              <Description>"Give grenade"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to grenade address
+add esi, 33FD90
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>203</ID>
+              <Description>"Give dynamite"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to dynamite address
+add esi, 33FEA0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>204</ID>
+              <Description>"Give banana"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to banana address
+add esi, 33FFB0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>205</ID>
+              <Description>"Give shovel"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to spade address
+add esi, 3400C0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>206</ID>
+              <Description>"Give torch"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to torch address
+add esi, 3402E0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>207</ID>
+              <Description>"Give grail sword"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to grail sword address
+add esi, 3403F0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>208</ID>
+              <Description>"Give sword"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to sword address
+add esi, 340500
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>209</ID>
+              <Description>"Give spear"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to spear address
+add esi, 340610
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>210</ID>
+              <Description>"Give bottle"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to bottle address
+add esi, 340720
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>211</ID>
+              <Description>"Give rifle"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to rifle address
+add esi, 340830
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>212</ID>
+              <Description>"Give machine gun"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to machine gun address
+add esi, 340940
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>213</ID>
+              <Description>"Give black sleep"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to black sleep address
+add esi, 340B60
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>214</ID>
+              <Description>"Give barrel"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to barrel address
+add esi, 340C70
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>215</ID>
+              <Description>"Give bush"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to bush address
+add esi, 340D80
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>216</ID>
+              <Description>"Give red brick"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to red brick address
+add esi, 340E90
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>217</ID>
+              <Description>"Give chair"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to chair address
+add esi, 340FA0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>218</ID>
+              <Description>"Give raven stool"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to raven stool address
+add esi, 3410B0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>219</ID>
+              <Description>"Give rock"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to rock address
+add esi, 3411C0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>220</ID>
+              <Description>"Give holy grail"</Description>
+              <LastState/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>[ENABLE]
+alloc(callFunc,2048)
+createthread(callFunc)
+
+callFunc:
+pushad
+pushfd
+
+// [LEGOIndy.exe+006ADEE4] is player 1 struct pointer
+
+
+// Offset to get ebp
+mov ebp, [LEGOIndy.exe+006ADEE4]
+add ebp, EB1068
+
+// Uses the pointer to player struct
+mov esi, [LEGOIndy.exe+006ADEE4]
+// add offset to holy grail address
+add esi, 3412D0
+// offset to fix for unmodded files
+sub esi, 1800
+
+//player struct offset.
+mov edi, [LEGOIndy.exe+006ADEE4]
+
+
+// float argument
+fld dword ptr [esi+40]
+sub esp,4
+fstp dword ptr [esp]
+
+// remaining args
+push 00
+push 01
+push 01
+push ebp
+push esi
+push edi
+// LEGOIndy.exe+1DA25B is
+// where the give item function is called
+call LEGOIndy.exe+1D82C0
+add esp,1C   // 7 args × 4 bytes
+
+popfd
+popad
+ret
+
+[DISABLE]
+dealloc(callFunc)
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>180</ID>
+          <Description>"Weapon testing (not functional)"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>150</ID>
+              <Description>"P1 animation cycle"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>Byte</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>12A7</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>167</ID>
+              <Description>"WEapon pointer?"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>B20</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>176</ID>
+              <Description>"bazooka something"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>B14</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>177</ID>
+              <Description>"bazooka something 2"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>B1C</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>174</ID>
+              <Description>"Current buffer address"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>AF8</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>169</ID>
+              <Description>"Weapon on back (current buffer addy)?"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>8 Bytes</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>B00</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>175</ID>
+              <Description>"Last buffer address"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>AFC</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>168</ID>
+              <Description>"WEapon itself?"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>AD8</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>195</ID>
+              <Description>"Crossbow string"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>String</VariableType>
+              <Length>8</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>340A50</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>190</ID>
+              <Description>"Bazooka string"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>String</VariableType>
+              <Length>7</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>3401D0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>197</ID>
+              <Description>"pistol string"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>String</VariableType>
+              <Length>10</Length>
+              <Unicode>0</Unicode>
+              <CodePage>0</CodePage>
+              <ZeroTerminate>1</ZeroTerminate>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>33F840</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>191</ID>
+              <Description>"ebp"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <Color>FF0000</Color>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>4CFFB60</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>192</ID>
+              <Description>"P1 struct"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>"LEGOIndy.exe"+006ADEE4</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <Comments>LIJ1 Speedrun Practice Cheat Table by Sonic7
+Made with Cheat Engine 7.2
+---------------------------------------------------
+Hooking into LIJ1:
+ - Choose the Select process button 
+   in the top left (computer icon)
+ - Select LIJ1 executable
+ - Confirm the LUA script if asked
+---------------------------------------------------
+Enable NOCUT:
+Activating this box will enable NOCUT. Disabling the
+box will turn off NOCUT.
+----------------------------------------------------
+Giving players items:
+To select which item to give, double click the value column
+for the player's selected item row. For player 1, double
+click the "P1 Selected Item" value dropdown and choose the
+item you want. To give the item, check the Give player item
+box. For player one, check "Give P1 item".
+----------------------------------------------------
+Default Hotkeys:
+Lift Player 1: B
+Lift Player 2: N
+Player 1 under floor: F
+Player 2 under floor: CTRL+F
+Teleport P1 to P2: Y
+Teleport P2 to P1: U
+Teleport P1 to Hard Spawn: I
+---------------------------------------------------
+Notes on player order:
+"Player 1" refers to the player that started a hard load as player 1.
+"Player 2" refers to the player that started a hard load as player 2.
+"Player 3" refers to a character that started not dropped in but still is playable. (Example: Brody in 3-1 R1)
+"Player 4" refers to a character that started not dropped in but is still is playable. (Example: Henry in 3-6 R1)
+--------------------------------------------------
+Notes on Extras section:
+These seem to be similar structure to players but correspond to enemies and similar. Not sure if it is useful or relevant but it looks cool.
+--------------------------------------------------
+To rebind hotkeys:
+- Lift Player 1:
+     - Right click on "P1 Y Velocity"
+     - Click "Set/Change Hotkeys"
+     - Double click the hotkey
+     - Type the hotkey you want into the box
+     - Optional, if you want different lift:
+           - Change the value under "Set value to"
+- Lift Player 2:
+     - Right click on "P2 Y Velocity"
+     - Click "Set/Change Hotkeys"
+     - Double click the hotkey
+     - Type the hotkey you want into the box
+     - Optional, if you want different lift:
+           - Change the value under "Set value to"
+- Player 1 under floor:
+     - Right click on "P1 Y Position"
+     - Click "Set/Change Hotkeys"
+     - Double click the hotkey
+     - Type the hotkey you want into the box
+     - Optional, if you want to go lower:
+           - Change the value under "Set value to"
+- Player 2 under floor:
+     - Right click on "P2 Y Position"
+     - Click "Set/Change Hotkeys"
+     - Double click the hotkey
+     - Type the hotkey you want into the box
+     - Optional, if you want to go lower:
+           - Change the value under "Set value to"
+ - Teleport P1 to P2:
+     - Click "Table" at the top bar
+     - Click "Show Cheat Table LUA Script"
+     - Scroll up to the top
+     - Set "P1_TO_P2_HOTKEY" equal to key you want
+     - Note: CE uses Windows Virtual Key codes
+ - Teleport P2 to P1:
+     - Click "Table" at the top bar
+     - Click "Show Cheat Table LUA Script"
+     - Scroll up to the top
+     - Set "P2_TO_P1_HOTKEY" equal to key you want
+     - Note: CE uses Windows Virtual Key codes
+- Teleport P1 to P1 Hard Spawn:
+     - Click "Table" at the top bar
+     - Click "Show Cheat Table LUA Script"
+     - Scroll up to the top
+     - Set "P1_TO_HARDSPAWN_HOTKEY" equal to key you want
+     - Note: CE uses Windows Virtual Key codes
+Setting a give item hotkey:
+ - Right click the give item box of the player you want.
+ - select Set hotkeys
+ - Click create hotkey
+ - choose the key
+ - Set the dropdown to "Enable script"
+ - Click apply 
+----------------------------------------------------
+Cheat Table notes:
+Freezing values:
+Check the box next to a memory value to freeze it.
+Weapon instances ammo:
+When picking up weapons, the game cycles between a
+few memory addresses to store your weapon's current
+ammo. Pick up a weapon, figure out which memory 
+address isn't 0 and freeze it or change its value.
+Hard Spawn watching:
+If a player sets a new hard spawn, that players' 
+Hard Spawn group label will light up pink in the
+cheat table. This is useful for knowing if and 
+where you set a hard spawn while setting up 
+superjumps. To change how long the label lights 
+up for, go into the LUA Script and change 
+"TIMER_FLASH_AMOUNT" (default 1 second)
+Superjump timer:
+This value counts up to 2ish if the player is stuck.
+When it reaches 2ish the player will superjump.
+----------------------------------------------------
+Setting up speedhack (Slow down the game):
+ - Select “Edit” at the top
+ - Select “Settings”
+ - Select Hotkeys
+ - Choose “Toggle the speedhack” and set hotkey
+ - Go back to the main CE page
+ - Check the “Enable Speedhack” box on the right
+ - Set the value to what you want (Like 0.25)
+ - Now you can toggle the speedhack with hotkey
+----------------------------------------------------
+Enable respawn speedup:
+This enables auto-speedup when player 1 dies. Enable
+this if you get impatient when dying. This will
+overwrite your previous speedhack value if enabled.
+----------------------------------------------------
+</Comments>
+  <LuaScript>TIMER_FLASH_AMOUNT = 1000 -- how long hard spawn flashes pink.
+
+
+
+P1_TO_P2_HOTKEY = VK_Y -- Hotkey to teleport p1 to p2. default is VK_Y (Y)
+P2_TO_P1_HOTKEY = VK_U -- Hotkey to teleport p2 to p1. default is VK_U (U)
+
+P1_TO_HARDSPAWN_HOTKEY = VK_I -- Hotkey to teleport p1 to their hard spawn.
+                              -- default is VK_I (I)
+
+P1_WRITE_TO_TARGET_HOTKEY = VK_J -- Hotkey to write to target tp. default N
+
+P1_TO_TARGET_HOTKEY = VK_H -- Hotkey to tp to target tp. default H
+
+local addressList1 = getAddressList()
+
+
+ -- Allocate give item memory
+ai1 = getAddressList().getMemoryRecordByDescription("AllocItemP1")
+ai2 = getAddressList().getMemoryRecordByDescription("AllocItemP2")
+ai3 = getAddressList().getMemoryRecordByDescription("AllocItemP3")
+ai4 = getAddressList().getMemoryRecordByDescription("AllocItemP4")
+
+ai1.Active=true
+ai2.Active=true
+ai3.Active=true
+ai4.Active=true
+
+
+
+local function findHeaderByDescription(desc)
+    for i=0, addressList1.Count-1 do
+        local entry = addressList1[i]
+        if entry.Description == desc then
+            return entry
+        end
+    end
+    return nil
+end
+
+
+
+-- values for nocut swapping
+local headerNameNOCUTEnable = "Enable NOCUT"
+local memoryAddressNOCUT = "006A025C"
+
+local valueWhenActiveNOCUT = 0x01F08313
+local valueWhenNotActiveNOCUT = 0x1FF8C113
+
+
+local headerNOCUTEnable = findHeaderByDescription(headerNameNOCUTEnable)
+
+-- local P1ItemsBoxes = findHeaderByDescription("Give P1 items")
+
+local p1itembox = findHeaderByDescription("Give P1 item")
+local p2itembox = findHeaderByDescription("Give P2 item")
+local p3itembox = findHeaderByDescription("Give P3 item")
+local p4itembox = findHeaderByDescription("Give P4 item")
+
+local function updateItemMemAlloc()
+      ai1.Active=true
+      ai2.Active=true
+      ai3.Active=true
+      ai4.Active=true
+      end
+
+
+if not (headerNOCUTEnable) then
+   print("NOCUT Header not found")
+else
+    -- update NOCUT memory here
+    local function updateValueNOCUT()
+          if headerNOCUTEnable.Active then
+             writeInteger(memoryAddressNOCUT, valueWhenActiveNOCUT)
+          else
+              writeInteger(memoryAddressNOCUT, valueWhenNotActiveNOCUT)
+          end
+
+    end
+local timerNOCUT = createTimer(nil, true)
+local timerMem = createTimer(nil, true)
+timerMem.Interval = 1000
+timerNOCUT.Interval = 500
+timerNOCUT.OnTimer = updateValueNOCUT
+timerMem.OnTimer = updateItemMemAlloc
+end
+
+
+local headerSkipCutscene = findHeaderByDescription("Skip cutscene (bind hotkey)")
+
+
+
+-- update NOCUT memory here
+    local function skipCutscene()
+          if not headerSkipCutscene.Active then
+             writeInteger(memoryAddressNOCUT, valueWhenActiveNOCUT)
+             sleep(20)
+             writeInteger(memoryAddressNOCUT, valueWhenNotActiveNOCUT)
+             headerSkipCutscene.Active = false
+          end
+end
+
+headerSkipCutscene.OnActivate = skipCutscene
+
+local function updateItemsBoxes(item)
+      if item then
+         item.Active = false
+      end
+end
+
+-- Script to disable the boxes of give items
+local function disableItemBoxes()
+
+      p1itembox.Active = false
+
+      p2itembox.Active = false
+
+      p3itembox.Active = false
+
+      p4itembox.Active = false
+end
+
+
+local timerItems = createTimer(nil, true)
+timerItems.Interval = 250
+timerItems.OnTimer = disableItemBoxes
+
+local GROUP_NAME = "P1 Hard Spawn"
+local WATCHED = { "P1 X Hard Spawn", "P1 Y Hard Spawn", "P1 Z Hard Spawn" }
+
+local hardSpawnSoundBox = getAddressList().getMemoryRecordByDescription("Hard Spawn sound")
+
+
+local al = getAddressList()
+local group = al.getMemoryRecordByDescription(GROUP_NAME)
+
+if not group then
+  error("Group not found: " .. GROUP_NAME)
+end
+
+-- Store original color
+local originalColor = group.Color
+local lastValues = {}
+
+-- Initialize last known values
+for _, name in ipairs(WATCHED) do
+  local rec = al.getMemoryRecordByDescription(name)
+  if rec then
+    lastValues[name] = rec.Value
+  end
+end
+
+local flashTimer = nil
+
+local function flashGroup()
+  -- group.Color = 0xFFC0CB -- pink
+  group.Color = 0xFE019A -- bright pink
+
+  if flashTimer then
+    flashTimer.destroy()
+  end
+
+  flashTimer = createTimer()
+  -- how long we are pink
+  flashTimer.Interval = TIMER_FLASH_AMOUNT
+  flashTimer.OnTimer = function(t)
+    group.Color = originalColor
+    t.destroy()
+    flashTimer = nil
+  end
+end
+
+-- Watch timer
+local watchTimer = createTimer()
+watchTimer.Interval = 50
+watchTimer.OnTimer = function()
+  for _, name in ipairs(WATCHED) do
+    local rec = al.getMemoryRecordByDescription(name)
+    if rec then
+      local current = rec.Value
+      if lastValues[name] ~= current then
+        lastValues[name] = current
+        flashGroup()
+        break
+      end
+    end
+  end
+end
+
+-- P2 script for hard spawn watching
+local GROUP_NAME_P2 = "P2 Hard Spawn"
+local WATCHED_P2 = { "P2 X Hard Spawn", "P2 Y Hard Spawn", "P2 Z Hard Spawn" }
+
+local al = getAddressList()
+local groupP2 = al.getMemoryRecordByDescription(GROUP_NAME_P2)
+
+if not groupP2 then
+  error("Group not found: " .. GROUP_NAME_P2)
+end
+
+-- Store original color
+local originalColorP2 = groupP2.Color
+local lastValuesP2 = {}
+
+-- Initialize last known values
+for _, name in ipairs(WATCHED_P2) do
+  local rec = al.getMemoryRecordByDescription(name)
+  if rec then
+    lastValuesP2[name] = rec.Value
+  end
+end
+
+local flashTimerP2 = nil
+
+local function flashGroupP2()
+  groupP2.Color = 0xFE019A -- bright pink
+
+  if flashTimerP2 then
+    flashTimerP2.destroy()
+  end
+
+  flashTimerP2 = createTimer()
+  -- how long we are pink
+  flashTimerP2.Interval = TIMER_FLASH_AMOUNT
+  flashTimerP2.OnTimer = function(t)
+    groupP2.Color = originalColorP2
+    t.destroy()
+    flashTimerP2 = nil
+  end
+end
+
+-- Watch timer
+local watchTimerP2 = createTimer()
+watchTimerP2.Interval = 50
+watchTimerP2.OnTimer = function()
+  for _, name in ipairs(WATCHED_P2) do
+    local rec = al.getMemoryRecordByDescription(name)
+    if rec then
+      local current = rec.Value
+      if lastValuesP2[name] ~= current then
+        lastValuesP2[name] = current
+        flashGroupP2()
+        break
+      end
+    end
+  end
+end
+
+-- P3 script
+local GROUP_NAME_P3 = "P3 Hard Spawn"
+local WATCHED_P3 = { "P3 X Hard Spawn", "P3 Y Hard Spawn", "P3 Z Hard Spawn" }
+
+local al = getAddressList()
+local groupP3 = al.getMemoryRecordByDescription(GROUP_NAME_P3)
+
+if not groupP3 then
+  error("Group not found: " .. GROUP_NAME_P3)
+end
+
+-- Store original color
+local originalColorP3 = groupP3.Color
+local lastValuesP3 = {}
+
+-- Initialize last known values
+for _, name in ipairs(WATCHED_P3) do
+  local rec = al.getMemoryRecordByDescription(name)
+  if rec then
+    lastValuesP3[name] = rec.Value
+  end
+end
+
+local flashTimerP3 = nil
+
+local function flashGroupP3()
+  groupP3.Color = 0xFE019A -- bright pink
+
+  if flashTimerP3 then
+    flashTimerP3.destroy()
+  end
+
+  flashTimerP3 = createTimer()
+  -- how long we are pink
+  flashTimerP3.Interval = TIMER_FLASH_AMOUNT
+  flashTimerP3.OnTimer = function(t)
+    groupP3.Color = originalColorP3
+    t.destroy()
+    flashTimerP3 = nil
+  end
+end
+
+-- Watch timer
+local watchTimerP3 = createTimer()
+watchTimerP3.Interval = 50
+watchTimerP3.OnTimer = function()
+  for _, name in ipairs(WATCHED_P3) do
+    local rec = al.getMemoryRecordByDescription(name)
+    if rec then
+      local current = rec.Value
+      if lastValuesP3[name] ~= current then
+        lastValuesP3[name] = current
+        flashGroupP3()
+        break
+      end
+    end
+  end
+end
+
+
+-- P4 script
+local GROUP_NAME_P4 = "P4 Hard Spawn"
+local WATCHED_P4 = { "P4 X Hard Spawn", "P4 Y Hard Spawn", "P4 Z Hard Spawn" }
+
+local al = getAddressList()
+local groupP4 = al.getMemoryRecordByDescription(GROUP_NAME_P4)
+
+if not groupP4 then
+  error("Group not found: " .. GROUP_NAME_P4)
+end
+
+-- Store original color
+local originalColorP4 = groupP4.Color
+local lastValuesP4 = {}
+
+-- Initialize last known values
+for _, name in ipairs(WATCHED_P4) do
+  local rec = al.getMemoryRecordByDescription(name)
+  if rec then
+    lastValuesP4[name] = rec.Value
+  end
+end
+
+local flashTimerP4 = nil
+
+local function flashGroupP4()
+  groupP4.Color = 0xFE019A -- bright pink
+
+  if flashTimerP4 then
+    flashTimerP4.destroy()
+  end
+
+  flashTimerP4 = createTimer()
+  -- how long we are pink
+  flashTimerP4.Interval = TIMER_FLASH_AMOUNT
+  flashTimerP4.OnTimer = function(t)
+    groupP4.Color = originalColorP4
+    t.destroy()
+    flashTimerP4 = nil
+  end
+end
+
+-- Watch timer
+local watchTimerP4 = createTimer()
+watchTimerP4.Interval = 50
+watchTimerP4.OnTimer = function()
+  for _, name in ipairs(WATCHED_P4) do
+    local rec = al.getMemoryRecordByDescription(name)
+    if rec then
+      local current = rec.Value
+      if lastValuesP4[name] ~= current then
+        lastValuesP4[name] = current
+        flashGroupP4()
+        break
+      end
+    end
+  end
+end
+
+-- hotkey for teleport p1 to p2 and p2 to p1:
+
+local al = getAddressList()
+
+local p1 = {
+  x = al.getMemoryRecordByDescription("P1 X Position"),
+  y = al.getMemoryRecordByDescription("P1 Y Position"),
+  z = al.getMemoryRecordByDescription("P1 Z Position")
+}
+
+local p2 = {
+  x = al.getMemoryRecordByDescription("P2 X Position"),
+  y = al.getMemoryRecordByDescription("P2 Y Position"),
+  z = al.getMemoryRecordByDescription("P2 Z Position")
+}
+
+local p1_hardspawn = {
+  x = al.getMemoryRecordByDescription("P1 X Hard Spawn"),
+  y = al.getMemoryRecordByDescription("P1 Y Hard Spawn"),
+  z = al.getMemoryRecordByDescription("P1 Z Hard Spawn")
+}
+
+-- Safety check
+for k, v in pairs(p1) do
+  if not v then error("Missing P1 " .. k) end
+end
+for k, v in pairs(p2) do
+  if not v then error("Missing P2 " .. k) end
+end
+for k, v in pairs(p1_hardspawn) do
+  if not v then error("Missing P1 HS " .. k) end
+end
+
+-- Teleport functions
+local function teleportP1toP2()
+  p1.x.Value = p2.x.Value
+  p1.y.Value = p2.y.Value
+  p1.z.Value = p2.z.Value
+end
+
+local function teleportP2toP1()
+  p2.x.Value = p1.x.Value
+  p2.y.Value = p1.y.Value
+  p2.z.Value = p1.z.Value
+end
+
+local function teleportP1toHardSpawn()
+  p1.x.Value = p1_hardspawn.x.Value
+  p1.y.Value = p1_hardspawn.y.Value
+  p1.z.Value = p1_hardspawn.z.Value
+end
+
+-- Checking to make sure the hotkeys are not null
+if P1_TO_P2_HOTKEY ~= nil then
+   HK_P1_TO_P2 = createHotkey(teleportP1toP2, P1_TO_P2_HOTKEY)
+end
+
+if P2_TO_P1_HOTKEY ~= nil then
+   HK_P2_TO_P1 = createHotkey(teleportP2toP1, P2_TO_P1_HOTKEY)
+end
+
+if P1_TO_HARDSPAWN_HOTKEY ~= nil then
+   HK_P1_TO_HS = createHotkey(teleportP1toHardSpawn, P1_TO_HARDSPAWN_HOTKEY)
+end
+
+local triggered = false
+
+-- === CONFIG ===
+local SPEED_VALUE = 20
+local SPEED_DURATION = 500 -- milliseconds
+local CHECK_INTERVAL = 10 -- ms
+
+-- Use ONE of these:
+
+-- Option A: memory record
+local healthMR = getAddressList().getMemoryRecordByDescription("P1 Health")
+
+-- Option B: raw address (comment Option A if using this)
+-- local healthAddress = 0x12345678
+
+-- =================
+
+local headerForRespawnSpeedup = getAddressList().getMemoryRecordByDescription("Enable respawn speedup")
+
+local checkTimer = createTimer(nil, false)
+checkTimer.Interval = CHECK_INTERVAL
+
+checkTimer.OnTimer = function()
+    local health
+
+    if healthMR then
+        health = tonumber(healthMR.Value)
+    else
+        health = readInteger(healthAddress)
+    end
+
+    if headerForRespawnSpeedup.Active then
+      if health == 0 and not triggered then
+          triggered = true
+
+          -- Enable speedhack
+          speedhack_setSpeed(SPEED_VALUE)
+
+          -- Disable speedhack after 0.25s
+          local offTimer = createTimer(nil, false)
+          offTimer.Interval = SPEED_DURATION
+          offTimer.OnTimer = function()
+              speedhack_setSpeed(1)
+              offTimer.destroy()
+          end
+          offTimer.setEnabled(true)
+      end
+
+      -- Reset trigger if health goes above 0 again
+      if health &gt; 0 then
+          triggered = false
+      end
+      end
+end
+checkTimer.setEnabled(true)
+
+
+-- Motorcycle escape motorcycle fix
+
+local fixMotorcyclesHeader = al.getMemoryRecordByDescription("Fix endroom motorcycles")
+
+if fixMotorcyclesHeader then
+   fixMotorcyclesHeader.OnActivate = function(memoryrecord, before, currentstate)
+     if not before then
+        memoryrecord.Value = "1"
+     end
+
+     return true
+  end
+end
+
+
+
+
+
+
+
+</LuaScript>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+DAFB9</Address>
+      <Comment>esi is castle b here
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D5410</Address>
+      <Comment>function start?
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D5470</Address>
+      <Comment>here is the function but i need to give it params
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D5477</Address>
+      <Comment>real start?
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D547E</Address>
+      <Comment>remove item mov
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D54A6</Address>
+      <Comment>the weird or of 0000 and 00810801
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D54AC</Address>
+      <Comment>this is what puts 318 into the register
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D54AF</Address>
+      <Comment>this puts 318 into memory
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D54B5</Address>
+      <Comment>puts last item into ecx? but like the string
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D54B8</Address>
+      <Comment>makes edx 0
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D5FB4</Address>
+      <Comment>Jumps ahead of spear spot to 
+some addres with 8s and 0 1 s
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D5FBA</Address>
+      <Comment>tests the low bit of eax address now ^
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D7780</Address>
+      <Comment>116 function start here actually. froze on swap
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D77BD</Address>
+      <Comment>function start?
+froze here
+
+This function is always called when dying or swapping items
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D77F1</Address>
+      <Comment>breakpoint froze here 
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D7827</Address>
+      <Comment>change item from item 1
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D7894</Address>
+      <Comment>change item from item 2
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D7899</Address>
+      <Comment>change item from item 3
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D78C0</Address>
+      <Comment>on swap
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D7A0B</Address>
+      <Comment>116 freezes after death
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D82C0</Address>
+      <Comment>Here EAX is mem addr for new weapon
+ECX is somehting new
+has string referencing animation spots
+
+EDI is self ref
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D82F1</Address>
+      <Comment>this oculd nbe the one
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8301</Address>
+      <Comment>function start?
+
+froze on give weapon
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D830C</Address>
+      <Comment>HERE ESI is addy of 
+weapon we are grabbing
+
+EAX is 065AF830 (which is 0)
+^ might be waepon we are holding
+
+current buffer moved to eax
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8311</Address>
+      <Comment>current buffer moved from eax to esi
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8316</Address>
+      <Comment>checks whether esi is zero or not
+jumps if it is zero
+esi points to an addy that points to current buffer
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8318</Address>
+      <Comment>Jump if grab an item w/ no item held
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D831A</Address>
+      <Comment>GO HERE IF WE HAVE AN ITEM AND GRAB
+ebx pointer being set to ebx or something
+
+here ebx is item we are grabbing
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8327</Address>
+      <Comment>cujrrent weawpon buffer pushed to stack i think
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8328</Address>
+      <Comment>on swap not on give
+EAX is curent weapon buffer or near it here
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8336</Address>
+      <Comment>IN THEORY This gets the weapon we are trying to give anmd returns its addy to eax 
+This only happens on swap though. I think this is clearing eax if we have an item
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8338</Address>
+      <Comment>puts that weapon memooiry address is EAX
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D833B</Address>
+      <Comment>need to give edx the pointer to bazooka
+this is for swapping for some reason
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D833E</Address>
+      <Comment>need to give ebx the pointer for bazooka
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8341</Address>
+      <Comment>gets the string for the item
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8344</Address>
+      <Comment>makes EAX equal to ECX
+this is the items second code (like 801 thing)
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8364</Address>
+      <Comment>calls swap weapon function
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D836C</Address>
+      <Comment>followed to here from
+LEGOIndy.exe+1D8336 
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1D8458</Address>
+      <Comment>calls original  other function . give fucntion
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1DA1A5</Address>
+      <Comment>broke right when pressing b
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1DA21C</Address>
+      <Comment>mov eax,ebp
+
+eax is something near spaer now 
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1DA22B</Address>
+      <Comment>this is for animation stuff i think
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1DA23E</Address>
+      <Comment>mov esi,eax
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"LEGOIndy.exe"+1DA25B</Address>
+      <Comment>bazooka give function
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>
