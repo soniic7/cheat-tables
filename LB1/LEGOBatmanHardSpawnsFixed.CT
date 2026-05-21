@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>36</ID>
+      <Description>"Player 1"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"P1 X-Coords"</Description>
+          <LastState Value="3.297077894" RealAddress="18F3AB14"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>"legobatman.exe"+006B2960</Address>
+          <Offsets>
+            <Offset>5C</Offset>
+          </Offsets>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Increase Value</Action>
+              <Keys>
+                <Key>97</Key>
+              </Keys>
+              <Value>.3</Value>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Decrease Value</Action>
+              <Keys>
+                <Key>98</Key>
+              </Keys>
+              <Value>.3</Value>
+              <ID>1</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"P1 Y-Coords"</Description>
+          <LastState Value="0.01111280918" RealAddress="18F3AB18"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>"legobatman.exe"+006B2960</Address>
+          <Offsets>
+            <Offset>60</Offset>
+          </Offsets>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Increase Value</Action>
+              <Keys>
+                <Key>99</Key>
+              </Keys>
+              <Value>.3</Value>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Decrease Value</Action>
+              <Keys>
+                <Key>100</Key>
+              </Keys>
+              <Value>.3</Value>
+              <ID>1</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"P1 Z-Coords"</Description>
+          <LastState Value="-0.586332202" RealAddress="18F3AB1C"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>"legobatman.exe"+006B2960</Address>
+          <Offsets>
+            <Offset>64</Offset>
+          </Offsets>
+          <Hotkeys>
+            <Hotkey>
+              <Action>Increase Value</Action>
+              <Keys>
+                <Key>101</Key>
+              </Keys>
+              <Value>.3</Value>
+              <ID>0</ID>
+            </Hotkey>
+            <Hotkey>
+              <Action>Decrease Value</Action>
+              <Keys>
+                <Key>102</Key>
+              </Keys>
+              <Value>.3</Value>
+              <ID>1</ID>
+            </Hotkey>
+          </Hotkeys>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>34</ID>
+          <Description>"P1 Hard Spawn"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>22</ID>
+              <Description>"P1 Hard Spawn X"</Description>
+              <LastState Value="3.297077894" RealAddress="18F3AC84"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>"legobatman.exe"+006B2960</Address>
+              <Offsets>
+                <Offset>1CC</Offset>
+              </Offsets>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Increase Value</Action>
+                  <Keys>
+                    <Key>97</Key>
+                  </Keys>
+                  <Value>.3</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Decrease Value</Action>
+                  <Keys>
+                    <Key>98</Key>
+                  </Keys>
+                  <Value>.3</Value>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>19</ID>
+              <Description>"P1 Hard Spawn Y"</Description>
+              <LastState Value="0.01111280918" RealAddress="18F3AC88"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>"legobatman.exe"+006B2960</Address>
+              <Offsets>
+                <Offset>1D0</Offset>
+              </Offsets>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Increase Value</Action>
+                  <Keys>
+                    <Key>97</Key>
+                  </Keys>
+                  <Value>.3</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Decrease Value</Action>
+                  <Keys>
+                    <Key>98</Key>
+                  </Keys>
+                  <Value>.3</Value>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>20</ID>
+              <Description>"P1 Hard Spawn Z"</Description>
+              <LastState Value="-0.586332202" RealAddress="18F3AC8C"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>"legobatman.exe"+006B2960</Address>
+              <Offsets>
+                <Offset>1D4</Offset>
+              </Offsets>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Increase Value</Action>
+                  <Keys>
+                    <Key>97</Key>
+                  </Keys>
+                  <Value>.3</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Decrease Value</Action>
+                  <Keys>
+                    <Key>98</Key>
+                  </Keys>
+                  <Value>.3</Value>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>23</ID>
+              <Description>"P1 SJ timer"</Description>
+              <LastState Value="0" RealAddress="18F3AC90"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>"legobatman.exe"+006B2960</Address>
+              <Offsets>
+                <Offset>1D8</Offset>
+              </Offsets>
+              <Hotkeys>
+                <Hotkey>
+                  <Action>Increase Value</Action>
+                  <Keys>
+                    <Key>97</Key>
+                  </Keys>
+                  <Value>.3</Value>
+                  <ID>0</ID>
+                </Hotkey>
+                <Hotkey>
+                  <Action>Decrease Value</Action>
+                  <Keys>
+                    <Key>98</Key>
+                  </Keys>
+                  <Value>.3</Value>
+                  <ID>1</ID>
+                </Hotkey>
+              </Hotkeys>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>37</ID>
+      <Description>"Player 2"</Description>
+      <Options moManualExpandCollapse="1"/>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>25</ID>
+          <Description>"P2 X-Coords"</Description>
+          <LastState Value="2.807965517" RealAddress="00AB2790"/>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>Float</VariableType>
+          <Address>LEGOBatman.exe+6B2790</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>26</ID>
+          <Description>"P2 Y-Coords"</Description>
+          <LastState Value="0.01111268997" RealAddress="00AB2794"/>
+          <VariableType>Float</VariableType>
+          <Address>LEGOBatman.exe+6B2794</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"P2 Z-Coords"</Description>
+          <LastState Value="0.2387696952" RealAddress="00AB2798"/>
+          <VariableType>Float</VariableType>
+          <Address>LEGOBatman.exe+6B2798</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>35</ID>
+          <Description>"P2 Hard Spawn"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>43</ID>
+              <Description>"P2 Hard Spawn X"</Description>
+              <LastState Value="-12.08080006" RealAddress="18F3C2CC"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>"legobatman.exe"+006B2960</Address>
+              <Offsets>
+                <Offset>1814</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>42</ID>
+              <Description>"P2 Hard Spawn Y"</Description>
+              <LastState Value="0.01110403612" RealAddress="18F3C2D0"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>"legobatman.exe"+006B2960</Address>
+              <Offsets>
+                <Offset>1818</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>41</ID>
+              <Description>"P2 Hard Spawn Z"</Description>
+              <LastState Value="-5.005120277" RealAddress="18F3C2D4"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>"legobatman.exe"+006B2960</Address>
+              <Offsets>
+                <Offset>181C</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>40</ID>
+              <Description>"P2 SJ timer"</Description>
+              <LastState Value="0" RealAddress="18F3C2D8"/>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>"legobatman.exe"+006B2960</Address>
+              <Offsets>
+                <Offset>1820</Offset>
+              </Offsets>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>TIMER_FLASH_AMOUNT = 1000 -- how long hard spawn flashes pink.
+
+P1_TO_HARDSPAWN_HOTKEY = VK_DECIMAL -- Hotkey to teleport p1 to their hard spawn.
+                              -- default is VK_I (I)
+
+--P2_TO_HARDSPAWN_HOTKEY = VK_NUMPAD3 -- Hotkey to teleport p1 to their hard spawn.
+                              -- default is VK_U (U)
+
+
+
+local GROUP_NAME = "P1 Hard Spawn"
+local WATCHED = { "P1 Hard Spawn X", "P1 Hard Spawn Y", "P1 Hard Spawn Z" }
+
+
+
+
+local al = getAddressList()
+local group = al.getMemoryRecordByDescription(GROUP_NAME)
+
+
+
+-- Store original color
+local originalColor = group.Color
+local lastValues = {}
+
+-- Initialize last known values
+for _, name in ipairs(WATCHED) do
+  local rec = al.getMemoryRecordByDescription(name)
+  if rec then
+    lastValues[name] = rec.Value
+  end
+end
+
+local flashTimer = nil
+
+local function flashGroup()
+  -- group.Color = 0xFFC0CB -- pink
+  group.Color = 0xFE019A -- bright pink
+
+  if flashTimer then
+    flashTimer.destroy()
+  end
+
+  flashTimer = createTimer()
+  -- how long we are pink
+  flashTimer.Interval = TIMER_FLASH_AMOUNT
+  flashTimer.OnTimer = function(t)
+    group.Color = originalColor
+    t.destroy()
+    flashTimer = nil
+  end
+end
+
+-- Watch timer
+local watchTimer = createTimer()
+watchTimer.Interval = 50
+watchTimer.OnTimer = function()
+  for _, name in ipairs(WATCHED) do
+    local rec = al.getMemoryRecordByDescription(name)
+    if rec then
+      local current = rec.Value
+      if lastValues[name] ~= current then
+        lastValues[name] = current
+        flashGroup()
+        break
+      end
+    end
+  end
+end
+
+-- P2 script for hard spawn watching
+local GROUP_NAME_P2 = "P2 Hard Spawn"
+local WATCHED_P2 = { "P2 Hard Spawn X", "P2 Hard Spawn Y", "P2 Hard Spawn Z" }
+
+local al = getAddressList()
+local groupP2 = al.getMemoryRecordByDescription(GROUP_NAME_P2)
+
+if not groupP2 then
+  error("Group not found: " .. GROUP_NAME_P2)
+end
+
+-- Store original color
+local originalColorP2 = groupP2.Color
+local lastValuesP2 = {}
+
+-- Initialize last known values
+for _, name in ipairs(WATCHED_P2) do
+  local rec = al.getMemoryRecordByDescription(name)
+  if rec then
+    lastValuesP2[name] = rec.Value
+  end
+end
+
+local flashTimerP2 = nil
+
+local function flashGroupP2()
+  groupP2.Color = 0xFE019A -- bright pink
+
+  if flashTimerP2 then
+    flashTimerP2.destroy()
+  end
+
+  flashTimerP2 = createTimer()
+  -- how long we are pink
+  flashTimerP2.Interval = TIMER_FLASH_AMOUNT
+  flashTimerP2.OnTimer = function(t)
+    groupP2.Color = originalColorP2
+    t.destroy()
+    flashTimerP2 = nil
+  end
+end
+
+-- Watch timer
+local watchTimerP2 = createTimer()
+watchTimerP2.Interval = 50
+watchTimerP2.OnTimer = function()
+  for _, name in ipairs(WATCHED_P2) do
+    local rec = al.getMemoryRecordByDescription(name)
+    if rec then
+      local current = rec.Value
+      if lastValuesP2[name] ~= current then
+        lastValuesP2[name] = current
+        flashGroupP2()
+        break
+      end
+    end
+  end
+end
+
+
+local p1 = {
+  x = al.getMemoryRecordByDescription("P1 X-Coords"),
+  y = al.getMemoryRecordByDescription("P1 Y-Coords"),
+  z = al.getMemoryRecordByDescription("P1 Z-Coords")
+}
+
+--local p2 = {
+--  x = al.getMemoryRecordByDescription("P2 X-Coords"),
+--  y = al.getMemoryRecordByDescription("P2 Y-Coords"),
+--  z = al.getMemoryRecordByDescription("P2 Z-Coords")
+--}
+
+local p1_hardspawn = {
+  x = al.getMemoryRecordByDescription("P1 Hard Spawn X"),
+  y = al.getMemoryRecordByDescription("P1 Hard Spawn Y"),
+  z = al.getMemoryRecordByDescription("P1 Hard Spawn Z")
+}
+
+--local p2_hardspawn = {
+--  x = al.getMemoryRecordByDescription("P2 Hard Spawn X"),
+--  y = al.getMemoryRecordByDescription("P2 Hard Spawn Y"),
+--  z = al.getMemoryRecordByDescription("P2 Hard Spawn Z")
+--}
+
+local function teleportP1toHardSpawn()
+  p1.x.Value = p1_hardspawn.x.Value
+  p1.y.Value = p1_hardspawn.y.Value
+  p1.z.Value = p1_hardspawn.z.Value
+end
+
+--local function teleportP2toHardSpawn()
+--  p2.x.Value = p2_hardspawn.x.Value
+--  p2.y.Value = p2_hardspawn.y.Value
+--  p2.z.Value = p2_hardspawn.z.Value
+--end
+
+
+
+
+
+if P1_TO_HARDSPAWN_HOTKEY ~= nil then
+   HK_P1_TO_HS = createHotkey(teleportP1toHardSpawn, P1_TO_HARDSPAWN_HOTKEY)
+end
+
+--if P2_TO_HARDSPAWN_HOTKEY ~= nil then
+--   HK_P2_TO_HS = createHotkey(teleportP2toHardSpawn, P2_TO_HARDSPAWN_HOTKEY)
+--end
+
+
+
+
+
+
+</LuaScript>
+</CheatTable>
