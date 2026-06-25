@@ -4,7 +4,7 @@ These are focused on providing functionality for speedrun practice and glitch hu
 
 
 ## Games:
-[LEGO Indiana Jones: The Original Adventures](./LIJ1/LEGOIndyIGT.CT)  
+[LEGO Indiana Jones: The Original Adventures](./LIJ1/LEGOIndySaveExitBypass.CT)  
 [LEGO Star Wars: The Complete Saga](./TCS/LEGOStarWarsSagaNOCUT.ct)  
 [LEGO Batman](./LB1/LEGOBatmanHardSpawnsFixed.CT)
 
