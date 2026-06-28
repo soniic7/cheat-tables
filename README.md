@@ -55,3 +55,4 @@ Debug Symbol EXEs from the TT Games LEGO Modding Discord (Download links):
 ## Tools used:
 [Cheat Engine](https://www.cheatengine.org/) (For live memory and function scanning, debugging, and analysis)  
 [Ghidra](https://github.com/nationalsecurityagency/ghidra) (For static analysis of executables)  
+[ImHex](https://imhex.werwolv.net/) (For hex editing)
