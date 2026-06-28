@@ -15,7 +15,7 @@ These are focused on providing functionality for speedrun practice and glitch hu
 
 
 
-#LIJ1 Livesplit IGT:
+# LIJ1 Livesplit IGT:
 
 - Hook and enable the LivesplitIGT option in Cheat Engine.
 - Add the [LIJ1LivesplitIGT](./LIJ1/autosplitters/LIJ1LivesplitIGT.asl) autosplitter to your livesplit as a scriptable autosplitter.
