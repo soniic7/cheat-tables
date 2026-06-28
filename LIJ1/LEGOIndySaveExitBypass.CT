@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="34">
+<CheatTable CheatEngineTableVersion="46">
   <CheatEntries>
     <CheatEntry>
       <ID>340</ID>
@@ -8,6 +8,28 @@
       <LastState Value="" RealAddress="00000000"/>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
+        <CheatEntry>
+          <ID>341</ID>
+          <Description>"Unlock All Extras"</Description>
+          <LastState/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>[ENABLE]
+// Allocate a small block of memory for our custom code
+alloc(CallFunction, 128)
+// Tell Cheat Engine to create a new thread to run our code
+CreateThread(CallFunction)
+
+CallFunction:
+  // Call the exact address of BuyAllShopExtras
+  call 0042fab0
+  // Return to exit the thread safely
+  ret
+
+[DISABLE]
+// Clean up the memory when you toggle the script off
+dealloc(CallFunction)
+</AssemblerScript>
+        </CheatEntry>
         <CheatEntry>
           <ID>339</ID>
           <Description>"Save and Exit bypass"</Description>
@@ -27,7 +49,6 @@ mov [00ACC924],eax
         <CheatEntry>
           <ID>239</ID>
           <Description>"Gizmo Loop"</Description>
-          <LastState Value="0" RealAddress="00AD27B4"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>LEGOIndy.exe+6D27B4</Address>
@@ -35,10 +56,19 @@ mov [00ACC924],eax
         <CheatEntry>
           <ID>309</ID>
           <Description>"Enable autosave (0 or 1)"</Description>
-          <LastState Value="1" RealAddress="00AD8368"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>ad8368</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>345</ID>
+          <Description>"1080p Refresh rate 2"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>009cc2ec</Address>
+          <Offsets>
+            <Offset>428</Offset>
+          </Offsets>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
@@ -455,7 +485,6 @@ dealloc(newmem)
                 <CheatEntry>
                   <ID>273</ID>
                   <Description>"Timer comparison red"</Description>
-                  <LastState Value="FF" RealAddress="004DE72B"/>
                   <ShowAsHex>1</ShowAsHex>
                   <ShowAsSigned>0</ShowAsSigned>
                   <VariableType>Byte</VariableType>
@@ -464,7 +493,6 @@ dealloc(newmem)
                 <CheatEntry>
                   <ID>272</ID>
                   <Description>"Timer comparison green"</Description>
-                  <LastState Value="FF" RealAddress="004DE726"/>
                   <ShowAsHex>1</ShowAsHex>
                   <ShowAsSigned>0</ShowAsSigned>
                   <VariableType>Byte</VariableType>
@@ -473,7 +501,6 @@ dealloc(newmem)
                 <CheatEntry>
                   <ID>271</ID>
                   <Description>"Timer comparison blue"</Description>
-                  <LastState Value="FF" RealAddress="004DE721"/>
                   <ShowAsHex>1</ShowAsHex>
                   <ShowAsSigned>0</ShowAsSigned>
                   <VariableType>Byte</VariableType>
@@ -493,7 +520,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>267</ID>
               <Description>"Timer1"</Description>
-              <LastState Value="1.943157377E-19" RealAddress="18FA30FA"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF0000</Color>
               <VariableType>Float</VariableType>
@@ -505,7 +531,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>282</ID>
               <Description>"Timer2"</Description>
-              <LastState Value="1.183910436E22" RealAddress="18FA30FE"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF0000</Color>
               <VariableType>Float</VariableType>
@@ -517,7 +542,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>283</ID>
               <Description>"Timer3"</Description>
-              <LastState Value="1.909674786E-19" RealAddress="18FA3102"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF0000</Color>
               <VariableType>Float</VariableType>
@@ -529,7 +553,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>284</ID>
               <Description>"Timer4"</Description>
-              <LastState Value="5.084273418E31" RealAddress="18FA3106"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF0000</Color>
               <VariableType>Float</VariableType>
@@ -541,7 +564,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>264</ID>
               <Description>"Super story timer"</Description>
-              <LastState Value="28.26282883" RealAddress="00A90C78"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>00A90C78</Address>
@@ -549,7 +571,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>265</ID>
               <Description>"Game Timer"</Description>
-              <LastState Value="11.82476139" RealAddress="00A90C68"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>00a90c68</Address>
@@ -557,7 +578,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>269</ID>
               <Description>"timerFormatString"</Description>
-              <LastState RealAddress="00835068"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>String</VariableType>
               <Length>12</Length>
@@ -681,7 +701,6 @@ dealloc(CallEndTrack)
                     <CheatEntry>
                       <ID>243</ID>
                       <Description>"msg_Init_A"</Description>
-                      <LastState Value="0" RealAddress="190BA3D8"/>
                       <ShowAsSigned>0</ShowAsSigned>
                       <Color>000000</Color>
                       <VariableType>Float</VariableType>
@@ -693,7 +712,6 @@ dealloc(CallEndTrack)
                     <CheatEntry>
                       <ID>244</ID>
                       <Description>"msg_Init_B"</Description>
-                      <LastState Value="0" RealAddress="190BA410"/>
                       <ShowAsSigned>0</ShowAsSigned>
                       <Color>000000</Color>
                       <VariableType>Float</VariableType>
@@ -734,7 +752,6 @@ dealloc(CallEndTrack)
             <CheatEntry>
               <ID>75</ID>
               <Description>"P1 Health"</Description>
-              <LastState Value="4" RealAddress="18EE7253"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>000000</Color>
               <VariableType>Byte</VariableType>
@@ -746,7 +763,6 @@ dealloc(CallEndTrack)
             <CheatEntry>
               <ID>151</ID>
               <Description>"P1 Max Hearts"</Description>
-              <LastState Value="4" RealAddress="18EE7252"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>000000</Color>
               <VariableType>Byte</VariableType>
@@ -888,7 +904,6 @@ dealloc(callFunc)
 24:Rock
 25:Holy grail
 </DropDownList>
-              <LastState Value="0" RealAddress="08020000"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>SelectedItemP1</Address>
@@ -904,7 +919,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>11</ID>
                   <Description>"P1 X Position"</Description>
-                  <LastState Value="-5.651357651" RealAddress="18EE5D8C"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -916,7 +930,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>12</ID>
                   <Description>"P1 Y Position"</Description>
-                  <LastState Value="-1.845094085" RealAddress="18EE5D90"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -939,7 +952,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>13</ID>
                   <Description>"P1 Z Position"</Description>
-                  <LastState Value="0.941509068" RealAddress="18EE5D94"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -960,7 +972,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>98</ID>
                   <Description>"P1 X Velocity"</Description>
-                  <LastState Value="0" RealAddress="18EE5D98"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -972,7 +983,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>99</ID>
                   <Description>"P1 Y Velocity"</Description>
-                  <LastState Value="-0.08257649839" RealAddress="18EE5D9C"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -995,7 +1005,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>100</ID>
                   <Description>"P1 Z Velocity"</Description>
-                  <LastState Value="0" RealAddress="18EE5DA0"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -1018,7 +1027,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>113</ID>
                   <Description>"P1 X Hard Spawn"</Description>
-                  <LastState Value="-5.651357651" RealAddress="18EE5EFC"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -1030,7 +1038,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>114</ID>
                   <Description>"P1 Y Hard Spawn"</Description>
-                  <LastState Value="-1.345094085" RealAddress="18EE5F00"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -1042,7 +1049,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>115</ID>
                   <Description>"P1 Z Hard Spawn"</Description>
-                  <LastState Value="0.941509068" RealAddress="18EE5F04"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -1054,7 +1060,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>184</ID>
                   <Description>"P1 Superjump timer"</Description>
-                  <LastState Value="0" RealAddress="18EE5F08"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>FF0000</Color>
                   <VariableType>Float</VariableType>
@@ -1075,7 +1080,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>58</ID>
                   <Description>"P1 weapon instance 1 ammo"</Description>
-                  <LastState Value="6" RealAddress="18EE675C"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>40FF00</Color>
                   <VariableType>Byte</VariableType>
@@ -1087,7 +1091,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>53</ID>
                   <Description>"P1 weapon instance 2 ammo"</Description>
-                  <LastState Value="0" RealAddress="18EE6784"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>40FF00</Color>
                   <VariableType>Byte</VariableType>
@@ -1099,7 +1102,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>62</ID>
                   <Description>"P1 weapon instance 3 ammo"</Description>
-                  <LastState Value="0" RealAddress="18EE67AC"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>40FF00</Color>
                   <VariableType>Byte</VariableType>
@@ -1111,7 +1113,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>64</ID>
                   <Description>"P1 weapon instance 4 ammo"</Description>
-                  <LastState Value="0" RealAddress="18EE67D4"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>40FF00</Color>
                   <VariableType>Byte</VariableType>
@@ -1123,7 +1124,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>59</ID>
                   <Description>"P1 weapon instance 5 ammo"</Description>
-                  <LastState Value="0" RealAddress="18EE67FC"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>40FF00</Color>
                   <VariableType>Byte</VariableType>
@@ -1135,7 +1135,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>55</ID>
                   <Description>"P1 weapon instance 6 ammo"</Description>
-                  <LastState Value="0" RealAddress="18EE6824"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>40FF00</Color>
                   <VariableType>Byte</VariableType>
@@ -1159,7 +1158,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>77</ID>
               <Description>"P2 Health"</Description>
-              <LastState Value="1" RealAddress="18EE9DB3"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>000000</Color>
               <VariableType>Byte</VariableType>
@@ -1299,7 +1297,6 @@ dealloc(callFunc)
 24:Rock
 25:Holy grail
 </DropDownList>
-              <LastState Value="0" RealAddress="08030000"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>SelectedItemP2</Address>
@@ -1314,7 +1311,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>17</ID>
                   <Description>"P2 X Position"</Description>
-                  <LastState Value="-4.966233253" RealAddress="18EE733C"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1326,7 +1322,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>18</ID>
                   <Description>"P2 Y Position"</Description>
-                  <LastState Value="-1.34531939" RealAddress="18EE7340"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1350,7 +1345,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>19</ID>
                   <Description>"P2 Z Position"</Description>
-                  <LastState Value="0.844096303" RealAddress="18EE7344"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1371,7 +1365,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>101</ID>
                   <Description>"P2 X Velocity"</Description>
-                  <LastState Value="0" RealAddress="18EE7348"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1383,7 +1376,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>102</ID>
                   <Description>"P2 Y Velocity"</Description>
-                  <LastState Value="2.5" RealAddress="18EE734C"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1406,7 +1398,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>103</ID>
                   <Description>"P2 Z Velocity"</Description>
-                  <LastState Value="0" RealAddress="18EE7350"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1428,7 +1419,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>116</ID>
                   <Description>"P2 X Hard Spawn"</Description>
-                  <LastState Value="-4.966233253" RealAddress="18EE74AC"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1440,7 +1430,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>117</ID>
                   <Description>"P2 Y Hard Spawn"</Description>
-                  <LastState Value="-1.34531939" RealAddress="18EE74B0"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1452,7 +1441,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>118</ID>
                   <Description>"P2 Z Hard Spawn"</Description>
-                  <LastState Value="0.844096303" RealAddress="18EE74B4"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1464,7 +1452,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>185</ID>
                   <Description>"P2 Superjump timer"</Description>
-                  <LastState Value="0" RealAddress="18EE74B8"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>008000</Color>
                   <VariableType>Float</VariableType>
@@ -1488,7 +1475,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>138</ID>
               <Description>"P3 Health"</Description>
-              <LastState Value="1" RealAddress="18EEC913"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>000000</Color>
               <VariableType>Byte</VariableType>
@@ -1628,7 +1614,6 @@ dealloc(callFunc)
 24:Rock
 25:Holy grail
 </DropDownList>
-              <LastState Value="0" RealAddress="08350000"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>SelectedItemP3</Address>
@@ -1643,7 +1628,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>20</ID>
                   <Description>"P3 X Position"</Description>
-                  <LastState Value="2.335887671" RealAddress="18EE88EC"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1655,7 +1639,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>21</ID>
                   <Description>"P3 Y Position"</Description>
-                  <LastState Value="-1.591218472" RealAddress="18EE88F0"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1667,7 +1650,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>22</ID>
                   <Description>"P3 Z Position"</Description>
-                  <LastState Value="-0.2344693244" RealAddress="18EE88F4"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1688,7 +1670,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>104</ID>
                   <Description>"P3 X Velocity"</Description>
-                  <LastState Value="0.5999268293" RealAddress="18EE88F8"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1700,7 +1681,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>105</ID>
                   <Description>"P3 Y Velocity"</Description>
-                  <LastState Value="0" RealAddress="18EE88FC"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1712,7 +1692,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>106</ID>
                   <Description>"P3 Z Velocity"</Description>
-                  <LastState Value="-0.009376049973" RealAddress="18EE8900"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1734,7 +1713,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>119</ID>
                   <Description>"P3 X Hard Spawn"</Description>
-                  <LastState Value="2.335887671" RealAddress="18EE8A5C"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1746,7 +1724,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>120</ID>
                   <Description>"P3 Y Hard Spawn"</Description>
-                  <LastState Value="-1.591218472" RealAddress="18EE8A60"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1758,7 +1735,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>121</ID>
                   <Description>"P3 Z Hard Spawn"</Description>
-                  <LastState Value="-0.2344693244" RealAddress="18EE8A64"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1770,7 +1746,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>186</ID>
                   <Description>"P3 Superjump timer"</Description>
-                  <LastState Value="0" RealAddress="18EE8A68"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>800080</Color>
                   <VariableType>Float</VariableType>
@@ -1794,7 +1769,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>139</ID>
               <Description>"P4 Health"</Description>
-              <LastState Value="1" RealAddress="18EEF473"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>000000</Color>
               <VariableType>Byte</VariableType>
@@ -1934,7 +1908,6 @@ dealloc(callFunc)
 24:Rock
 25:Holy grail
 </DropDownList>
-              <LastState Value="0" RealAddress="08360000"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>SelectedItemP4</Address>
@@ -1949,7 +1922,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>23</ID>
                   <Description>"P4 X Position"</Description>
-                  <LastState Value="-4.179069519" RealAddress="18EE9E9C"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -1961,7 +1933,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>24</ID>
                   <Description>"P4 Y Position"</Description>
-                  <LastState Value="-1.346604228" RealAddress="18EE9EA0"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -1973,7 +1944,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>25</ID>
                   <Description>"P4 Z Position"</Description>
-                  <LastState Value="1.396090508" RealAddress="18EE9EA4"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -1994,7 +1964,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>107</ID>
                   <Description>"P4 X Velocity"</Description>
-                  <LastState Value="0" RealAddress="18EE9EA8"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -2006,7 +1975,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>108</ID>
                   <Description>"P4 Y Velocity"</Description>
-                  <LastState Value="0" RealAddress="18EE9EAC"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -2018,7 +1986,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>109</ID>
                   <Description>"P4 Z Velocity"</Description>
-                  <LastState Value="0" RealAddress="18EE9EB0"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -2039,7 +2006,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>122</ID>
                   <Description>"P4 X Hard Spawn"</Description>
-                  <LastState Value="-4.179069519" RealAddress="18EEA00C"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -2051,7 +2017,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>123</ID>
                   <Description>"P4 Y Hard Spawn"</Description>
-                  <LastState Value="-1.346604228" RealAddress="18EEA010"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -2063,7 +2028,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>124</ID>
                   <Description>"P4 Z Hard Spawn"</Description>
-                  <LastState Value="1.396090508" RealAddress="18EEA014"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -2075,7 +2039,6 @@ dealloc(callFunc)
                 <CheatEntry>
                   <ID>187</ID>
                   <Description>"P4 Superjump timer"</Description>
-                  <LastState Value="0" RealAddress="18EEA018"/>
                   <ShowAsSigned>0</ShowAsSigned>
                   <Color>808000</Color>
                   <VariableType>Float</VariableType>
@@ -2098,7 +2061,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>26</ID>
               <Description>"Extra 1 X Pointer"</Description>
-              <LastState Value="0.1064767018" RealAddress="18EEB44C"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2110,7 +2072,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>27</ID>
               <Description>"Extra 1 Y Pointer"</Description>
-              <LastState Value="-1.591218472" RealAddress="18EEB450"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2122,7 +2083,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>28</ID>
               <Description>"Extra 1 Z Pointer"</Description>
-              <LastState Value="-0.2858540714" RealAddress="18EEB454"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2134,7 +2094,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>29</ID>
               <Description>"Extra 2 X Pointer"</Description>
-              <LastState Value="-6.738706112" RealAddress="18EEC9FC"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2146,7 +2105,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>30</ID>
               <Description>"Extra 2 Y Pointer"</Description>
-              <LastState Value="-1.346604228" RealAddress="18EECA00"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2158,7 +2116,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>31</ID>
               <Description>"Extra 2 Z Pointer"</Description>
-              <LastState Value="-1.400983214" RealAddress="18EECA04"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2170,7 +2127,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>32</ID>
               <Description>"Extra 3 X Pointer"</Description>
-              <LastState Value="5.817622185" RealAddress="18EEDFAC"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2182,7 +2138,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>33</ID>
               <Description>"Extra 3 Y Pointer"</Description>
-              <LastState Value="-1.345516801" RealAddress="18EEDFB0"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2194,7 +2149,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>34</ID>
               <Description>"Extra 3 Z Pointer"</Description>
-              <LastState Value="1.276958704" RealAddress="18EEDFB4"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2206,7 +2160,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>35</ID>
               <Description>"Extra 4 X Pointer"</Description>
-              <LastState Value="-5.520616531" RealAddress="18EEF55C"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2218,7 +2171,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>36</ID>
               <Description>"Extra 4 Y Pointer"</Description>
-              <LastState Value="-1.346604228" RealAddress="18EEF560"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2230,7 +2182,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>37</ID>
               <Description>"Extra 4 Z Pointer"</Description>
-              <LastState Value="-1.256411552" RealAddress="18EEF564"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2242,7 +2193,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>38</ID>
               <Description>"Extra 5 X Pointer"</Description>
-              <LastState Value="-6.755166531" RealAddress="18EF0B0C"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2254,7 +2204,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>39</ID>
               <Description>"Extra 5 Y Pointer"</Description>
-              <LastState Value="-1.346604228" RealAddress="18EF0B10"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2266,7 +2215,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>40</ID>
               <Description>"Extra 5 Z Pointer"</Description>
-              <LastState Value="0.7702838182" RealAddress="18EF0B14"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2278,7 +2226,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>41</ID>
               <Description>"Extra 6 X Pointer"</Description>
-              <LastState Value="5.730288029" RealAddress="18EF20BC"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2290,7 +2237,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>42</ID>
               <Description>"Extra 6 Y Pointer"</Description>
-              <LastState Value="-1.345516801" RealAddress="18EF20C0"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2302,7 +2248,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>43</ID>
               <Description>"Extra 6 Z Pointer"</Description>
-              <LastState Value="-1.626749158" RealAddress="18EF20C4"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2314,7 +2259,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>44</ID>
               <Description>"Extra 7 X Pointer"</Description>
-              <LastState Value="-8.83452034" RealAddress="18EF366C"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2326,7 +2270,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>45</ID>
               <Description>"Extra 7 Y Pointer"</Description>
-              <LastState Value="-0.3728986979" RealAddress="18EF3670"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2338,7 +2281,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>46</ID>
               <Description>"Extra 7 Z Pointer"</Description>
-              <LastState Value="1.993300438" RealAddress="18EF3674"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2350,7 +2292,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>47</ID>
               <Description>"Extra 8 X Pointer"</Description>
-              <LastState Value="-1.784587383" RealAddress="18EF4C1C"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2362,7 +2303,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>48</ID>
               <Description>"Extra 8 Y Pointer"</Description>
-              <LastState Value="-1.583182573" RealAddress="18EF4C20"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2374,7 +2314,6 @@ dealloc(callFunc)
             <CheatEntry>
               <ID>49</ID>
               <Description>"Extra 8 Z Pointer"</Description>
-              <LastState Value="-0.4402726293" RealAddress="18EF4C24"/>
               <ShowAsSigned>0</ShowAsSigned>
               <Color>FF00FF</Color>
               <VariableType>Float</VariableType>
@@ -2397,7 +2336,6 @@ dealloc(callFunc)
         <CheatEntry>
           <ID>179</ID>
           <Description>"NOCUT Address (Don't touch)"</Description>
-          <LastState Value="1FF8C113" RealAddress="006A025C"/>
           <ShowAsHex>1</ShowAsHex>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
@@ -2406,7 +2344,7 @@ dealloc(callFunc)
         <CheatEntry>
           <ID>227</ID>
           <Description>"AllocItemP1"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
 
@@ -2426,7 +2364,7 @@ dealloc(SelectedItemP1)
         <CheatEntry>
           <ID>231</ID>
           <Description>"AllocItemP2"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
 
@@ -2445,7 +2383,7 @@ dealloc(SelectedItemP2)
         <CheatEntry>
           <ID>233</ID>
           <Description>"AllocItemP3"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
 
@@ -2464,7 +2402,7 @@ dealloc(SelectedItemP3)
         <CheatEntry>
           <ID>235</ID>
           <Description>"AllocItemP4"</Description>
-          <LastState Activated="1"/>
+          <LastState/>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>[ENABLE]
 
@@ -4018,7 +3956,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>329</ID>
           <Description>"_NOMUSIC__cutscene"</Description>
-          <LastState Value="0" RealAddress="00A235C0"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>a235c0</Address>
@@ -4026,7 +3963,6 @@ dealloc(newmem)
         <CheatEntry>
           <ID>328</ID>
           <Description>"Mute cutscene (_NOSOUND)"</Description>
-          <LastState Value="0" RealAddress="00A235BC"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>a235bc</Address>
@@ -4034,14 +3970,12 @@ dealloc(newmem)
         <CheatEntry>
           <ID>240</ID>
           <Description>"In cutscene flag"</Description>
-          <LastState Value="0" RealAddress="009BBC5F"/>
           <VariableType>Byte</VariableType>
           <Address>LEGOIndy.exe+5BBC5F</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>330</ID>
           <Description>"Cutscene frame"</Description>
-          <LastState Value="78" RealAddress="00ACE8E8"/>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>ace8e8</Address>
@@ -4056,7 +3990,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>255</ID>
               <Description>"msg_1"</Description>
-              <LastState Value="0" RealAddress="190BA3A0"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>"LEGOIndy.exe"+006ADEE4</Address>
@@ -4067,7 +4000,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>257</ID>
               <Description>"msg_2"</Description>
-              <LastState Value="0" RealAddress="190BA3D8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>"LEGOIndy.exe"+006ADEE4</Address>
@@ -4078,7 +4010,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>258</ID>
               <Description>"msg_3"</Description>
-              <LastState Value="0" RealAddress="190BA410"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>"LEGOIndy.exe"+006ADEE4</Address>
@@ -4089,7 +4020,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>259</ID>
               <Description>"msg_4"</Description>
-              <LastState Value="0" RealAddress="190BA448"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>"LEGOIndy.exe"+006ADEE4</Address>
@@ -4100,7 +4030,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>260</ID>
               <Description>"msg_5"</Description>
-              <LastState Value="0" RealAddress="190BA480"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>"LEGOIndy.exe"+006ADEE4</Address>
@@ -4111,14 +4040,12 @@ dealloc(newmem)
             <CheatEntry>
               <ID>256</ID>
               <Description>"No description"</Description>
-              <LastState Value="0" RealAddress="190B83D8"/>
               <VariableType>Float</VariableType>
               <Address>190B83D8</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>261</ID>
               <Description>"Cheats enabled"</Description>
-              <LastState Value="01000000" RealAddress="00ACC2AC"/>
               <ShowAsHex>1</ShowAsHex>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
@@ -4127,7 +4054,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>262</ID>
               <Description>"coinmagnet struct pointer"</Description>
-              <LastState Value="00821CA4" RealAddress="00909A9C"/>
               <ShowAsHex>1</ShowAsHex>
               <VariableType>4 Bytes</VariableType>
               <Address>LEGOIndy.exe+509A9C</Address>
@@ -4135,7 +4061,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>263</ID>
               <Description>"AD struct pointer"</Description>
-              <LastState Value="00821A7C" RealAddress="00909C28"/>
               <ShowAsHex>1</ShowAsHex>
               <VariableType>4 Bytes</VariableType>
               <Address>LEGOIndy.exe+509C28</Address>
@@ -4143,7 +4068,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>266</ID>
               <Description>"No description"</Description>
-              <LastState RealAddress="18F9D0FA"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>String</VariableType>
               <Length>10</Length>
@@ -4155,7 +4079,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>304</ID>
               <Description>"ES"</Description>
-              <LastState RealAddress="00832D90"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>String</VariableType>
               <Length>17</Length>
@@ -4167,7 +4090,6 @@ dealloc(newmem)
             <CheatEntry>
               <ID>305</ID>
               <Description>"No description"</Description>
-              <LastState RealAddress="00832EC8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>String</VariableType>
               <Length>7</Length>
@@ -4179,21 +4101,18 @@ dealloc(newmem)
             <CheatEntry>
               <ID>306</ID>
               <Description>"No description"</Description>
-              <LastState Value="0" RealAddress="00AD7BFC"/>
               <VariableType>4 Bytes</VariableType>
               <Address>LEGOIndy.exe+6D7BFC</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>307</ID>
               <Description>"No description"</Description>
-              <LastState Value="0" RealAddress="00AD7C04"/>
               <VariableType>4 Bytes</VariableType>
               <Address>LEGOIndy.exe+6D7C04</Address>
             </CheatEntry>
             <CheatEntry>
               <ID>308</ID>
               <Description>"__CurrentMenuId"</Description>
-              <LastState Value="5" RealAddress="00AD828C"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>ad828c</Address>
@@ -4250,7 +4169,6 @@ exit:
             <CheatEntry>
               <ID>312</ID>
               <Description>"nothing"</Description>
-              <LastState Value="-1" RealAddress="0096F9D4"/>
               <ShowAsSigned>1</ShowAsSigned>
               <VariableType>2 Bytes</VariableType>
               <Address>96f9d4</Address>
@@ -4258,7 +4176,6 @@ exit:
             <CheatEntry>
               <ID>311</ID>
               <Description>"onSaveMenu (-1)"</Description>
-              <LastState Value="-1" RealAddress="00AD793C"/>
               <ShowAsSigned>1</ShowAsSigned>
               <VariableType>2 Bytes</VariableType>
               <Address>ad793c</Address>
@@ -4266,7 +4183,6 @@ exit:
             <CheatEntry>
               <ID>314</ID>
               <Description>"No description"</Description>
-              <LastState Value="-1" RealAddress="0096F9D6"/>
               <ShowAsSigned>1</ShowAsSigned>
               <VariableType>2 Bytes</VariableType>
               <Address>96f9d6</Address>
@@ -4274,7 +4190,6 @@ exit:
                 <CheatEntry>
                   <ID>313</ID>
                   <Description>"converts to 0 when pausing"</Description>
-                  <LastState Value="0" RealAddress="00AD7930"/>
                   <ShowAsSigned>1</ShowAsSigned>
                   <VariableType>2 Bytes</VariableType>
                   <Address>ad7930</Address>
@@ -4284,7 +4199,6 @@ exit:
             <CheatEntry>
               <ID>315</ID>
               <Description>"No description"</Description>
-              <LastState Value="0" RealAddress="00AD7930"/>
               <ShowAsSigned>1</ShowAsSigned>
               <VariableType>2 Bytes</VariableType>
               <Address>ad7930</Address>
@@ -4292,7 +4206,6 @@ exit:
             <CheatEntry>
               <ID>316</ID>
               <Description>"No description"</Description>
-              <LastState Value="0" RealAddress="00AD7932"/>
               <ShowAsSigned>1</ShowAsSigned>
               <VariableType>2 Bytes</VariableType>
               <Address>ad7932</Address>
@@ -4300,7 +4213,6 @@ exit:
             <CheatEntry>
               <ID>317</ID>
               <Description>"_openlevels?"</Description>
-              <LastState Value="0" RealAddress="009C417C"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>09c417c</Address>
@@ -4308,7 +4220,6 @@ exit:
             <CheatEntry>
               <ID>318</ID>
               <Description>"__allminikits?"</Description>
-              <LastState Value="0" RealAddress="009C418C"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>009c418c</Address>
@@ -4316,7 +4227,6 @@ exit:
             <CheatEntry>
               <ID>319</ID>
               <Description>"__collectallsuits?"</Description>
-              <LastState Value="0" RealAddress="009C4190"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>009c4190</Address>
@@ -4324,7 +4234,6 @@ exit:
             <CheatEntry>
               <ID>320</ID>
               <Description>"___allshopextras?"</Description>
-              <LastState Value="0" RealAddress="009C4190"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>009c4190</Address>
@@ -4332,7 +4241,6 @@ exit:
             <CheatEntry>
               <ID>321</ID>
               <Description>"__initsuperstory?"</Description>
-              <LastState Value="0" RealAddress="009C4188"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>009c4188</Address>
@@ -4340,7 +4248,6 @@ exit:
             <CheatEntry>
               <ID>322</ID>
               <Description>"playTrailer (-1)"</Description>
-              <LastState Value="-1" RealAddress="00915EE4"/>
               <ShowAsSigned>1</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>915ee4</Address>
@@ -4348,7 +4255,6 @@ exit:
             <CheatEntry>
               <ID>323</ID>
               <Description>"_newlevelresumecutaudio"</Description>
-              <LastState Value="0" RealAddress="00936D64"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>936d64</Address>
@@ -4356,7 +4262,6 @@ exit:
             <CheatEntry>
               <ID>324</ID>
               <Description>"_BATMAN"</Description>
-              <LastState Value="0" RealAddress="009B5598"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>9b5598</Address>
@@ -4364,7 +4269,6 @@ exit:
             <CheatEntry>
               <ID>325</ID>
               <Description>"_LSW"</Description>
-              <LastState Value="0" RealAddress="009B559C"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>9b559c</Address>
@@ -4372,7 +4276,6 @@ exit:
             <CheatEntry>
               <ID>326</ID>
               <Description>"thisSetClassVolumePointer"</Description>
-              <LastState Value="419079264" RealAddress="00A90A08"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>4 Bytes</VariableType>
               <Address>00A90A08</Address>
@@ -4380,7 +4283,6 @@ exit:
             <CheatEntry>
               <ID>331</ID>
               <Description>"_cutscene_quit_prompt?"</Description>
-              <LastState Value="0" RealAddress="00AD84C0"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>ad84c0</Address>
@@ -4388,7 +4290,6 @@ exit:
             <CheatEntry>
               <ID>332</ID>
               <Description>"cs"</Description>
-              <LastState Value="0" RealAddress="00AD84C4"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>ad84c4</Address>
@@ -4396,7 +4297,6 @@ exit:
             <CheatEntry>
               <ID>333</ID>
               <Description>"cs2"</Description>
-              <LastState Value="0" RealAddress="00AD84C8"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>ad84c8</Address>
@@ -4404,7 +4304,6 @@ exit:
             <CheatEntry>
               <ID>334</ID>
               <Description>"cs2"</Description>
-              <LastState Value="0" RealAddress="00AD8484"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>ad8484</Address>
@@ -4412,7 +4311,6 @@ exit:
             <CheatEntry>
               <ID>335</ID>
               <Description>"No description"</Description>
-              <LastState Value="0" RealAddress="00ACE8C0"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>0ace8c0</Address>
@@ -4420,7 +4318,6 @@ exit:
             <CheatEntry>
               <ID>253</ID>
               <Description>"msg_FreePlay"</Description>
-              <LastState Value="0" RealAddress="190BA36A"/>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Byte</VariableType>
               <Address>"LEGOIndy.exe"+006ADEE4</Address>
@@ -4431,9 +4328,57 @@ exit:
             <CheatEntry>
               <ID>252</ID>
               <Description>"In Freeplay?"</Description>
-              <LastState Value="0" RealAddress="190B836A"/>
               <VariableType>Byte</VariableType>
               <Address>190B836A</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>349</ID>
+          <Description>"Video/Options"</Description>
+          <Options moManualExpandCollapse="1"/>
+          <LastState Value="" RealAddress="00000000"/>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>342</ID>
+              <Description>"Video Mode Array Pointer"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>009cc2ec</Address>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>343</ID>
+              <Description>"Start of video setting options"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>009cc2ec</Address>
+              <Offsets>
+                <Offset>0</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>347</ID>
+              <Description>"0005 right after MEMBLKHEADER for save file"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>2 Bytes</VariableType>
+              <Address>9cc2ec</Address>
+              <Offsets>
+                <Offset>-7FCF</Offset>
+              </Offsets>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>348</ID>
+              <Description>"End of save file in memory (compared to HXD)"</Description>
+              <ShowAsHex>1</ShowAsHex>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>2 Bytes</VariableType>
+              <Address>9cc2ec</Address>
+              <Offsets>
+                <Offset>-53</Offset>
+              </Offsets>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
