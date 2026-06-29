@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>15</ID>
+      <Description>"Assemble Max Level Cooldown"</Description>
+      <LastState Value="10" RealAddress="23018A32794"/>
+      <VariableType>Float</VariableType>
+      <Address>"Librarian-Win64-Shipping.exe"+087DA868</Address>
+      <Offsets>
+        <Offset>24</Offset>
+        <Offset>68</Offset>
+        <Offset>110</Offset>
+        <Offset>7D8</Offset>
+        <Offset>190</Offset>
+        <Offset>8</Offset>
+        <Offset>28</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

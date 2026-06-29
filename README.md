@@ -7,6 +7,7 @@ These are focused on providing functionality for speedrun practice and glitch hu
 [LEGO Indiana Jones: The Original Adventures](./LIJ1/LEGOIndySaveExitBypass.CT)  
 [LEGO Star Wars: The Complete Saga](./TCS/LEGOStarWarsSagaNOCUT.ct)  
 [LEGO Batman](./LB1/LEGOBatmanHardSpawnsFixed.CT)
+[Librarian Arcane Library](./Librarian/Librarian-Win64-Shipping.CT)
 
 
 ## How to download:
