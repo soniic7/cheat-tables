@@ -50,6 +50,8 @@ Debug Symbol EXEs from the TT Games LEGO Modding Discord (Download links):
 [Lego The Incredibles](https://www.smakdev.net/share/@JFranco/LegoDebugSymbols/%5BNX%5D%20LEGO%20The%20Incredibles%20%5B0100A01006E00000%5D.7z)  
 [Lego Worlds](https://www.smakdev.net/share/@JFranco/LegoDebugSymbols/%5BNX%5D%20LEGO%20Worlds%20%5B0100838002AEA000%5D.7z)  
 
+[Google Drive Mirror for Debug Symbol EXEs](https://drive.google.com/drive/folders/1E__4gm4XnMWzRiq-CJwtZwXWf8X3rws1?usp=sharing)
+
 
 
 
