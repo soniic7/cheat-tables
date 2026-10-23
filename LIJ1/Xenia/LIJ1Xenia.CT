@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"--- Enable "Get P1 Pointer", then move around in game to get P1's coordinates ---"</Description>
+      <LastState Value="" RealAddress="00000000"/>
+      <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"Get P1 Pointer"</Description>
+      <LastState/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscan(INJECT_P1_COORDS, 0F B6 C0 C1 E0 0C 44 01 D0 44 0F 38 F1 24 07 41 BA 60 00 00 00 49 01 DA)
+
+alloc(newmem, $1000, INJECT_P1_COORDS)
+alloc(pPlayerBase, 8, INJECT_P1_COORDS)
+registersymbol(pPlayerBase)
+registersymbol(INJECT_P1_COORDS)
+
+label(code)
+label(save_p1)
+label(skip_p2)
+label(return)
+
+newmem:
+  push r11
+  push r10
+
+  // Calculate Host Player Base (RDI + RBX)
+  lea r11, [rdi+rbx]
+
+  // 1. First time enabling or level load? Save immediately.
+  cmp qword ptr [pPlayerBase], 0
+  je save_p1
+
+  // 2. Is this address &lt;= stored base? Save it (P1 is always lower than P2).
+  cmp r11, [pPlayerBase]
+  jbe save_p1
+
+  // 3. Level Reload Check: If address is &gt; 0x20000 bytes higher, a new level loaded.
+  mov r10, r11
+  sub r10, [pPlayerBase]
+  cmp r10, 20000
+  ja save_p1
+
+  // Otherwise, it's Player 2 -&gt; skip overwriting
+  jmp skip_p2
+
+save_p1:
+  mov [pPlayerBase], r11
+
+skip_p2:
+  pop r10
+  pop r11
+
+code:
+  // Original Big-Endian write instruction (6 bytes)
+  movbe [rdi+rax], r12d
+  jmp return
+
+INJECT_P1_COORDS+9:
+  jmp newmem
+  nop
+
+return:
+
+[DISABLE]
+INJECT_P1_COORDS+9:
+  db 44 0F 38 F1 24 07
+
+unregistersymbol(pPlayerBase)
+unregistersymbol(INJECT_P1_COORDS)
+dealloc(pPlayerBase)
+dealloc(newmem)
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>10</ID>
+      <Description>"Get P1 Pointer (With coordinate tracing)"</Description>
+      <LastState Activated="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript>[ENABLE]
+aobscan(INJECT_P1_COORDS, 0F B6 C0 C1 E0 0C 44 01 D0 44 0F 38 F1 24 07 41 BA 60 00 00 00 49 01 DA)
+
+alloc(newmem, $1000, INJECT_P1_COORDS)
+alloc(pPlayerBase, 8, INJECT_P1_COORDS)
+alloc(nanCount, 8, INJECT_P1_COORDS)
+alloc(lastNanBits, 4, INJECT_P1_COORDS)
+alloc(bufferIndex, 8, INJECT_P1_COORDS)
+alloc(pCoordBuffer, 8, INJECT_P1_COORDS)
+
+alloc(coordBuffer, $40000) // 256 KB buffer (16,384 full [X,Y,Z] vector snapshots)
+
+registersymbol(pPlayerBase)
+registersymbol(nanCount)
+registersymbol(lastNanBits)
+registersymbol(coordBuffer)
+registersymbol(bufferIndex)
+registersymbol(INJECT_P1_COORDS)
+
+label(code)
+label(save_p1)
+label(coord_update)
+label(try_y)
+label(try_z)
+label(do_vector_log)
+label(skip_p2)
+label(check_nan)
+label(found_nan)
+label(skip_nan)
+label(return)
+
+pCoordBuffer:
+  dq coordBuffer
+
+newmem:
+  push r11
+  push r10
+  push rax
+  push rcx
+  push rdx
+
+  // Calculate Host Player Base (RDI + RBX)
+  lea r11, [rdi+rbx]
+
+  // Filter Player 1
+  cmp qword ptr [pPlayerBase], 0
+  je save_p1
+  cmp r11, [pPlayerBase]
+  jbe save_p1
+
+  mov r10, r11
+  sub r10, [pPlayerBase]
+  cmp r10, 20000
+  ja save_p1
+
+  jmp skip_p2
+
+save_p1:
+  mov [pPlayerBase], r11
+
+  // Calculate offset of current write (RAX - RBX)
+  mov r10, rax
+  sub r10, rbx
+
+  // Check if writing to X (105C), Y (1060), or Z (1064)
+  cmp r10, 105C
+  je coord_update
+  cmp r10, 1060
+  je coord_update
+  cmp r10, 1064
+  je coord_update
+  jmp check_nan                 // Not a coordinate write, skip vector snapshot
+
+coord_update:
+  // Read existing values from memory
+  mov eax, [r11+105C]           // Existing X
+  mov ecx, [r11+1060]           // Existing Y
+  mov edx, [r11+1064]           // Existing Z
+
+  // Substitute the value currently being written (r12d)
+  cmp r10, 105C
+  jne try_y
+  mov eax, r12d                 // Updating X
+  mov r10d, 1                   // Trigger Tag: X
+  jmp do_vector_log
+
+try_y:
+  cmp r10, 1060
+  jne try_z
+  mov ecx, r12d                 // Updating Y
+  mov r10d, 2                   // Trigger Tag: Y
+  jmp do_vector_log
+
+try_z:
+  mov edx, r12d                 // Updating Z
+  mov r10d, 3                   // Trigger Tag: Z
+
+do_vector_log:
+  // Save snapshot to 16-byte record: [X, Y, Z, TriggerTag]
+  push r11
+  mov r11, [bufferIndex]
+  and r11d, 00003FFF            // Mask index to 0..16383 range
+  shl r11, 4                    // Multiply by 16 bytes per entry
+  mov r10, [pCoordBuffer]
+  add r10, r11                  // Target address = buffer_base + offset
+
+  mov [r10], eax                // Store X
+  mov [r10+4], ecx              // Store Y
+  mov [r10+8], edx              // Store Z
+  pop r11
+
+  inc qword ptr [bufferIndex]
+
+check_nan:
+  // --- IEEE 754 NaN HARDWARE CHECK ---
+  mov r10d, r12d
+  and r10d, 7F800000
+  cmp r10d, 7F800000
+  jne skip_nan
+
+  mov r10d, r12d
+  and r10d, 007FFFFF
+  test r10d, r10d
+  jnz found_nan
+  jmp skip_nan
+
+found_nan:
+  inc qword ptr [nanCount]
+  mov [lastNanBits], r12d
+
+skip_nan:
+
+skip_p2:
+  pop rdx
+  pop rcx
+  pop rax
+  pop r10
+  pop r11
+
+code:
+  movbe [rdi+rax], r12d
+  jmp return
+
+INJECT_P1_COORDS+9:
+  jmp newmem
+  nop
+
+return:
+
+[DISABLE]
+INJECT_P1_COORDS+9:
+  db 44 0F 38 F1 24 07
+
+unregistersymbol(bufferIndex)
+unregistersymbol(coordBuffer)
+unregistersymbol(lastNanBits)
+unregistersymbol(nanCount)
+unregistersymbol(pPlayerBase)
+unregistersymbol(INJECT_P1_COORDS)
+
+dealloc(coordBuffer)
+dealloc(pCoordBuffer)
+dealloc(bufferIndex)
+dealloc(lastNanBits)
+dealloc(nanCount)
+dealloc(pPlayerBase)
+dealloc(newmem)
+</AssemblerScript>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>0</ID>
+      <Description>"Hub studs"</Description>
+      <LastState Value="40001050" RealAddress="28281F358"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Custom</VariableType>
+      <CustomType>4 Bytes Big Endian</CustomType>
+      <Address>28281F358</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"CS Frame?"</Description>
+      <LastState Value="1067" RealAddress="2828D3134"/>
+      <VariableType>Custom</VariableType>
+      <CustomType>4 Bytes Big Endian</CustomType>
+      <Address>2828D3134</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"No description"</Description>
+      <LastState Value="0F B6 C0 C1 E0 0C 44 01 D0 E9 26 27 EB 0E 90 41 BA 60 00 00 00 49 01 DA" RealAddress="A115D8CC"/>
+      <ShowAsHex>1</ShowAsHex>
+      <VariableType>Array of byte</VariableType>
+      <ByteLength>24</ByteLength>
+      <Address>A115D8CC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"P1 X"</Description>
+      <LastState Value="-5.48141098" RealAddress="2F230E73C"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Custom</VariableType>
+      <CustomType>Float Big Endian</CustomType>
+      <Address>pPlayerBase</Address>
+      <Offsets>
+        <Offset>105c</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>6</ID>
+      <Description>"P1 Y"</Description>
+      <LastState Value="-1.345324397" RealAddress="2F230E740"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Custom</VariableType>
+      <CustomType>Float Big Endian</CustomType>
+      <Address>pPlayerBase</Address>
+      <Offsets>
+        <Offset>1060</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"P1 Z"</Description>
+      <LastState Value="-0.297273159" RealAddress="2F230E744"/>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>Custom</VariableType>
+      <CustomType>Float Big Endian</CustomType>
+      <Address>pPlayerBase</Address>
+      <Offsets>
+        <Offset>1064</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>local addr = getAddress("coordBuffer")
+local totalWrites = readQword("bufferIndex") or 0
+local maxEntries = 16384
+local countToRead = math.min(totalWrites, maxEntries)
+
+local file = io.open("coord_history.csv", "w")
+file:write("Snapshot_Index,X_Float,Y_Float,Z_Float,X_Hex,Y_Hex,Z_Hex\n")
+
+for i = 0, countToRead - 1 do
+    local entryAddr = addr + (i * 16)
+
+    -- Read 32-bit floats directly from buffer
+    local xVal = readFloat(entryAddr) or 0
+    local yVal = readFloat(entryAddr + 4) or 0
+    local zVal = readFloat(entryAddr + 8) or 0
+
+    local xHex = string.format("0x%08X", readInteger(entryAddr) or 0)
+    local yHex = string.format("0x%08X", readInteger(entryAddr + 4) or 0)
+    local zHex = string.format("0x%08X", readInteger(entryAddr + 8) or 0)
+
+    file:write(string.format("%d,%.6f,%.6f,%.6f,%s,%s,%s\n", i, xVal, yVal, zVal, xHex, yHex, zHex))
+end
+
+file:close()
+print("Exported " .. countToRead .. " snapshots to coord_history.csv!")
+print(string.format("NaN Count: %d | Last NaN Bits: 0x%08X", readQword("nanCount") or 0, readInteger("lastNanBits") or 0))
+</LuaScript>
+</CheatTable>
